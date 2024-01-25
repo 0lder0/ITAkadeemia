@@ -6,7 +6,6 @@ body {
 .navbar {
     display: flex;
     flex-direction: row;
-    width: 100%;
     justify-content: center;
     align-items: center;
     background-color: black;
@@ -27,7 +26,8 @@ body {
     font-size: 14px;
     text-align: center;
     font-weight: 500;
-    margin: 5px 5px;
+    display: inline-block;
+    margin-left: 20px;
 }
 
 .navbar a:hover {
@@ -36,7 +36,37 @@ body {
 
 .navbar i {
     font-size: 13px;
-    margin-right: 20px;
     color: #ffffff;
     padding-bottom: 5px;
 }
+
+.navbar a:hover i.fa-chevron-down {
+    color: #ababab;
+}
+
+.navbar_left {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.navbar_right {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin-left: 15px;
+    flex-wrap: wrap;
+}
+
+.navbar_logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar_menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
