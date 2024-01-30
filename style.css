@@ -192,11 +192,9 @@ main {
 .pageIntro_image #pageIntro_background {
     position: relative;
     top: 0;
-    left: 15%;
     object-fit: cover;
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
     z-index: 1;
 }
 
@@ -257,4 +255,63 @@ main {
 
 .slaid{
     display: none
+}
+
+/* Footer - Danil */
+.container-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer_logoImg {
+    max-width: 100%;
+}
+
+.footer_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer_logo {
+    flex: 1 0 200px;
+    margin-bottom: 20px;
+}
+
+.footer_mainCol {
+    flex: 1 0 65%;
+}
+
+.footer_grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer_col {
+    flex: 1 0 33%;
+    margin-bottom: 20px;
+}
+
+.footer_title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer_text {
+    line-height: 1.6;
+}
+
+
+.footer_text a {
+    color: #fff;
+    text-decoration: none;
 }
