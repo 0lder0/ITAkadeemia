@@ -156,17 +156,52 @@
 
 <script>
     $(document).ready(function () {
-        $("#calendar").evoCalendar({
-            calendarEvents: [
-                {
-                    id: 'bHay68s', // Event's ID (required)
-                    name: "New Year", // Event name (required)
-                    date: "2024-01-01", // Event date (required)
-                    type: "holiday", // Event type (required)
-                    everyYear: true // Same event every year (optional)
+        $("#eventForm").on("submit", function (event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Retrieve form data
+            var formData = $(this).serialize();
+
+            // Perform AJAX request
+            $.ajax({
+                type: "POST",
+                url: "postEvents.php",
+                data: formData,
+                success: function (response) {
+                    // Update the page or show a success message
+                    console.log(response); // Log the response for debugging
+
+                    // Assuming you want to update the calendar after adding an event
+                    updateCalendar();
+                    $("#addEventModal").css("display", "none");
+                },
+                error: function (error) {
+                    console.log(error); // Log the error for debugging
                 }
-            ]
+            });
         });
+
+        // Initialize your calendar, once the page's DOM is ready
+        function updateCalendar() {
+            // Fetch events from PHP script
+            $.ajax({
+                url: 'getEvents.php', // Adjust the path to your PHP script
+                type: 'GET',
+                success: function(events) {
+                    // Initialize EvoCalendar with fetched events
+                    $('#calendar').evoCalendar({
+                        calendarEvents: events
+                    });
+                },
+                error: function(error) {
+                    console.log('Error fetching events:', error);
+                }
+            });
+        }
+
+        // Initial calendar setup
+        updateCalendar();
     });
 </script>
 </body>
