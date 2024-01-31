@@ -340,6 +340,7 @@ main {
 
 .footer_logo {
     flex: 1 0 200px;
+    margin-top: 2rem;
     margin-bottom: 20px;
 }
 
@@ -364,6 +365,7 @@ main {
 
 .footer_text {
     line-height: 1.6;
+
 }
 
 
