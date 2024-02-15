@@ -202,20 +202,50 @@ main {
 
 /* Akadeemia container - Gervin */
 .akadeemiacontainer{
-    padding: 6rem 0;
-    width: 1631px;
-    margin: 0 auto;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
+
+@media (min-width: 576px) {
+    .akadeemiacontainer {
+        max-width:540px
+    }
+}
+
+@media (min-width: 768px) {
+    .akadeemiacontainer {
+        max-width:720px
+    }
+}
+
+@media (min-width: 992px) {
+    .akadeemiacontainer {
+        max-width:960px
+    }
+}
+
+@media (min-width: 1260px) {
+    .akadeemiacontainer {
+        max-width:1200px
+    }
+}
+
+
 .akadeemiaeosa1{
+    padding-top: 4rem;
     padding-right: 10px;
     padding-left: 10px;
     margin-right: auto;
     margin-left: auto;
     display: flex;
-    flex-direction: row;
-    width: 1200px;
+    flex-wrap: wrap;
+    width: 100%
 }
+
 
 .akadeemiatekst{
     width: 50%;
@@ -239,10 +269,23 @@ main {
 }
 
 
+/* Media päring 768px laiustele ja väiksematele ekraanidele */
+@media (max-width: 1000px) {
+    .akadeemiaeosa1 {
+        flex-direction: column; /* Muudame flex-suuna veergudest ridadeks */
+    }
+    .akadeemiatekst,
+    .akadeemialogo {
+        width: 100%; /* Mõlemad elemendid võtavad 100% laiusest */
+        max-width: none; /* Eemaldame maksimaalse laiuse piirangu */
+        text-align: center; /* Keskendame teksti ja logo */
+        margin-bottom: 20px; /* Lisame marginaali teksti ja logo vahele */
+    }
+}
+
 
 .pildisektsioon {
-    padding-right: 10px;
-    padding-left: 10px;
+
     margin-right: auto;
     margin-left: auto;
     margin-top: 100px;
@@ -262,9 +305,11 @@ main {
 
 /* lisainfo section */
 .lingidsection{
-    padding-top: 1rem;
-    padding-bottom: 6rem;
-    margin: 0 auto;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .lisainfo{
@@ -274,7 +319,7 @@ main {
     margin-left: auto;
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    width: 100%;
 }
 
 .lisainfo h2{
@@ -287,7 +332,8 @@ main {
 
 .lisainfonupud{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 
