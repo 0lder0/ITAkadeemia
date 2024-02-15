@@ -7,7 +7,7 @@
 
 body{
     margin: 0;
-    font-family: Montserrat,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -94,7 +94,7 @@ main {
 .pageIntro {
     background-color: black;
     display: flex;
-    height: 70vh;
+    height: 700px;
     justify-content: space-between;
 }
 
@@ -248,6 +248,7 @@ main {
 
 
 .akadeemiatekst{
+    font-family: 'Montserrat', sans-serif;
     width: 50%;
     text-align: left;
 }
@@ -386,6 +387,7 @@ main {
 
 .footer_logo {
     flex: 1 0 200px;
+    margin-top: 2rem;
     margin-bottom: 20px;
 }
 
@@ -410,10 +412,77 @@ main {
 
 .footer_text {
     line-height: 1.6;
+
 }
 
 
 .footer_text a {
     color: #fff;
     text-decoration: none;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.open-modal-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.open-modal-btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Form Styles */
+.modalForm {
+    display: grid;
+    gap: 10px;
+}
+
+.modalForm label {
+    font-weight: bold;
+}
+
+.modalForm button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }

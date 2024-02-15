@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="evo-calendar.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Tartu Rakenduslik Kolledž - IT Akadeemia</title>
@@ -66,23 +67,48 @@
             <img class="slaid" src="/images/teine.png" alt="Teine pilt">
             <img class="slaid" src="/images/esimene.png" alt="Kolmas pilt">
         </div>
-    </div>
 
-
-    <div class="lingidsection">
-        <div class="lisainfo">
-            <h2>Lisainfo</h2>
-            <div class="lisainfonupud">
-                <div><button class="lisainfo_button">Erialad</button></div>
-                <div><button class="lisainfo_button">Konsultatsioonid</button></div>
-                <div><button class="lisainfo_button">Kutsevõistlused</button></div>
-                <div><button class="lisainfo_button">Praktika</button></div>
+        <div class="lingidsection">
+            <div class="lisainfo">
+                <h2>Lisainfo</h2>
+                <div class="lisainfonupud">
+                    <div><button class="lisainfo_button">Erialad</button></div>
+                    <div><button class="lisainfo_button">Konsultatsioonid</button></div>
+                    <div><button class="lisainfo_button">Kutsevõistlused</button></div>
+                    <div><button class="lisainfo_button">Praktika</button></div>
+                </div>
             </div>
+        </div>
+
+        <div id="calendar"></div>
+        <div class="open-modal-btn-wrapper">
+            <button class="open-modal-btn">
+                Open Modal
+            </button>
         </div>
     </div>
 
-
 </main>
+
+<!-- Modal -->
+<div class="modal" id="addEventModal">
+    <div class="modal-content">
+        <span class="close-modal-btn">&times;</span>
+        <h2>Add New Event</h2>
+        <form action="postEvents.php" class="modalForm" id="eventForm" method="post">
+            <label for="eventName">Event Name:</label>
+            <input type="text" id="eventName" name="eventName" required>
+
+            <label for="eventDescription">Event Description:</label>
+            <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea>
+
+            <label for="eventDate">Event Date:</label>
+            <input type="date" id="eventDate" name="eventDate" required>
+
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+</div>
 
 <!-- Footer -->
 
@@ -111,10 +137,10 @@
                     <div class="footer_col">
                         <h3 class="footer_title">Privaatsustingimused</h3>
                         <div class="footer_text">
-                            <a href="https://voco.ee/andmekaitse-info/" target="">Andmekaitse</a>
+                            <p><a href="https://voco.ee/andmekaitse-info/" target="">Andmekaitse</a></p>
                         </div>
                         <div class="footer_text">
-                            <a href="https://voco.ee/kupsised/ " target="">Küpsised</a>
+                            <p><a href="https://voco.ee/kupsised/ " target="">Küpsised</a></p>
                         </div>
                     </div>
                 </div>
@@ -123,6 +149,60 @@
     </div>
 </footer>
 
+
 <script src="index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="evo-calendar.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#eventForm").on("submit", function (event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Retrieve form data
+            var formData = $(this).serialize();
+
+            // Perform AJAX request
+            $.ajax({
+                type: "POST",
+                url: "postEvents.php",
+                data: formData,
+                success: function (response) {
+                    // Update the page or show a success message
+                    console.log(response); // Log the response for debugging
+
+                    // Assuming you want to update the calendar after adding an event
+                    updateCalendar();
+                    $("#addEventModal").css("display", "none");
+                },
+                error: function (error) {
+                    console.log(error); // Log the error for debugging
+                }
+            });
+        });
+
+        // Initialize your calendar, once the page's DOM is ready
+        function updateCalendar() {
+            // Fetch events from PHP script
+            $.ajax({
+                url: 'getEvents.php', // Adjust the path to your PHP script
+                type: 'GET',
+                success: function(events) {
+                    // Initialize EvoCalendar with fetched events
+                    $('#calendar').evoCalendar({
+                        calendarEvents: events
+                    });
+                },
+                error: function(error) {
+                    console.log('Error fetching events:', error);
+                }
+            });
+        }
+
+        // Initial calendar setup
+        updateCalendar();
+    });
+</script>
 </body>
 </html>
