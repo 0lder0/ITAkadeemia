@@ -444,7 +444,7 @@ main {
 }
 
 
-/* Modal Styles */
+/* Modal - Kevin */
 .modal {
     display: none;
     position: fixed;
@@ -491,7 +491,6 @@ main {
     cursor: pointer;
 }
 
-/* Form Styles */
 .modalForm {
     display: grid;
     gap: 10px;
@@ -508,4 +507,17 @@ main {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+/* Tunniplaan - Kevin */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+table, th, td {
+    border: 1px solid black;
 }
