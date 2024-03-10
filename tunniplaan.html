@@ -37,21 +37,70 @@
         <h2>Tunniplaan</h2>
 
         <table class="timetable">
-            <tr>
-                <th>Aeg</th>
-                <th>Esmaspäev</th>
-                <th>Teisipäev</th>
-                <th>Kolmapäev</th>
-                <th>Neljapäev</th>
-                <th>Reede</th>
+            <tr class="timetable_header">
             </tr>
             <tr>
                 <td>08:30 - 10:00</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>                    <div class="timetable_event">
+                    <div class="event_time">
+                        8:30 - 10:00
+                    </div>
+                    Ettevalmistus matemaatika riigieksamiks
+                    <div class="classroom">
+                        Kopli A - A409 (Klassiruum)
+                    </div>
+                    <div class="teacher">
+                        Erki Kuus
+                    </div>
+                </div></td>
+                <td>                    <div class="timetable_event">
+                    <div class="event_time">
+                        8:30 - 10:00
+                    </div>
+                    Ettevalmistus matemaatika riigieksamiks
+                    <div class="classroom">
+                        Kopli A - A409 (Klassiruum)
+                    </div>
+                    <div class="teacher">
+                        Erki Kuus
+                    </div>
+                </div></td>
+                <td>                    <div class="timetable_event">
+                    <div class="event_time">
+                        8:30 - 10:00
+                    </div>
+                    Ettevalmistus matemaatika riigieksamiks
+                    <div class="classroom">
+                        Kopli A - A409 (Klassiruum)
+                    </div>
+                    <div class="teacher">
+                        Erki Kuus
+                    </div>
+                </div></td>
+                <td>                    <div class="timetable_event">
+                    <div class="event_time">
+                        8:30 - 10:00
+                    </div>
+                    Ettevalmistus matemaatika riigieksamiks
+                    <div class="classroom">
+                        Kopli A - A409 (Klassiruum)
+                    </div>
+                    <div class="teacher">
+                        Erki Kuus
+                    </div>
+                </div></td>
+                <td>                     <div class="timetable_event">
+                    <div class="event_time">
+                        8:30 - 10:00
+                    </div>
+                    Ettevalmistus matemaatika riigieksamiks
+                    <div class="classroom">
+                        Kopli A - A409 (Klassiruum)
+                    </div>
+                    <div class="teacher">
+                        Erki Kuus
+                    </div>
+                </div></td>
             </tr>
             <tr>
                 <td>10:15 - 11:45</td>
@@ -79,7 +128,20 @@
             </tr>
             <tr>
                 <td>15:45 - 17:15</td>
-                <td></td>
+                <td>
+                    <div class="timetable_event">
+                        <div class="event_time">
+                            8:30 - 10:00
+                        </div>
+                        Ettevalmistus matemaatika riigieksamiks
+                        <div class="classroom">
+                            Kopli A - A409 (Klassiruum)
+                        </div>
+                        <div class="teacher">
+                            Erki Kuus
+                        </div>
+                    </div>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -126,6 +188,37 @@
         </div>
     </div>
 </footer>
-
 </body>
+
+<script>
+
+    fetch('https://siseveeb.voco.ee/veebilehe_andmed/tunniplaan?nadal=2024-02-12T00:00:00&grupp=1583')
+        .then(response => response.json())
+        .then(data => {
+            const date = new Date(data.nadal);
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+
+            const formattedMonth = month < 10 ? '0' + month : month;
+
+
+            const dayNames = ['E', 'T', 'K', 'N', 'R'];
+
+
+
+
+
+            let timetableHeaderHTML = "<th>Aeg</th>";
+
+            dayNames.forEach((dayName, index) => {
+                const dayValue = index > 0 ? day + index : day;
+                const formattedDayValue = dayValue < 10 ? '0' + dayValue : dayValue;
+
+                timetableHeaderHTML += `<th>${dayName} ${formattedDayValue}.${formattedMonth}</th>`;
+            });
+
+            document.querySelector(".timetable_header").innerHTML = timetableHeaderHTML;
+        });
+</script>
+
 </html>

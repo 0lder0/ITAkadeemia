@@ -520,6 +520,36 @@ main {
 }
 
 .timetable th, .timetable td {
-    padding: 15px;
+    padding: 5px;
     border: 1px solid black;
 }
+
+.timetable td {
+    height: 100px
+}
+
+.timetable_event {
+    font-size: .8rem;
+    padding: 5px;
+    background: #3ca8ff;
+    border-radius: 15px;
+}
+
+.event_time {
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+
+/* Media päring 768px laiustele ja väiksematele ekraanidele */
+@media (max-width: 768px) {
+    .timetable {
+        overflow-x: auto;
+    }
+
+    .timetable_event {
+        overflow-x: hidden;
+    }
+
+}
+
+
