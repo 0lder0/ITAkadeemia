@@ -511,13 +511,15 @@ main {
 
 /* Tunniplaan - Kevin */
 
-table {
+.timetable {
+    table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     margin-bottom: 100px;
 }
 
-table, th, td {
+.timetable th, .timetable td {
+    padding: 15px;
     border: 1px solid black;
 }
