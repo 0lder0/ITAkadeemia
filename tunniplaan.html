@@ -37,9 +37,9 @@
         <h2>Tunniplaan</h2>
 
         <table class="timetable">
-            <tr class="timetable_header">
+            <tr id="timetable_header">
             </tr>
-            <tr>
+            <tr id="first_lesson">
                 <td>08:30 - 10:00</td>
                 <td>                    <div class="timetable_event">
                     <div class="event_time">
@@ -102,7 +102,7 @@
                     </div>
                 </div></td>
             </tr>
-            <tr>
+            <tr id="second_lesson">
                 <td>10:15 - 11:45</td>
                 <td></td>
                 <td></td>
@@ -110,7 +110,7 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr id="third_lesson">
                 <td>11:55 - 14:00</td>
                 <td></td>
                 <td></td>
@@ -118,7 +118,7 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr id="fourth_lesson">
                 <td>14:10 - 15:40</td>
                 <td></td>
                 <td></td>
@@ -126,7 +126,7 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr id="fifth_lesson">
                 <td>15:45 - 17:15</td>
                 <td>
                     <div class="timetable_event">
@@ -192,32 +192,40 @@
 
 <script>
 
-    fetch('https://siseveeb.voco.ee/veebilehe_andmed/tunniplaan?nadal=2024-02-12T00:00:00&grupp=1583')
+    fetch('https://siseveeb.voco.ee/veebilehe_andmed/tunniplaan?nadal=2024-02-26T00:00:00&grupp=1583')
         .then(response => response.json())
         .then(data => {
-            const date = new Date(data.nadal);
-            const day = date.getDate();
+            const lessonKeys = Object.keys(data.tunnid);
+            const date = new Date(lessonKeys[0]);
             const month = date.getMonth() + 1;
 
             const formattedMonth = month < 10 ? '0' + month : month;
-
-
             const dayNames = ['E', 'T', 'K', 'N', 'R'];
-
-
-
-
 
             let timetableHeaderHTML = "<th>Aeg</th>";
 
-            dayNames.forEach((dayName, index) => {
-                const dayValue = index > 0 ? day + index : day;
-                const formattedDayValue = dayValue < 10 ? '0' + dayValue : dayValue;
+            for (let index = 0; index < 5; index++) {
+                const lessonKey = lessonKeys[index];
+                const date = new Date(lessonKey);
 
-                timetableHeaderHTML += `<th>${dayName} ${formattedDayValue}.${formattedMonth}</th>`;
-            });
+                let dayOfMonth = date.getDate();
 
-            document.querySelector(".timetable_header").innerHTML = timetableHeaderHTML;
+                if (lessonKey === undefined) {
+                    dayOfMonth = new Date(lessonKeys[index - 1]).getDate() + 1;
+                }
+
+                const formattedDayOfMonth = dayOfMonth < 10 ? '0' + dayOfMonth : dayOfMonth;
+
+                console.log(lessonKey);
+
+
+                timetableHeaderHTML += `<th>${dayNames[index]} ${formattedDayOfMonth}.${formattedMonth}</th>`;
+            }
+
+            document.getElementById("timetable_header").innerHTML = timetableHeaderHTML;
+
+            console.log(lessonKeys);
+            console.log(data.tunnid[lessonKeys[0]]);
         });
 </script>
 
