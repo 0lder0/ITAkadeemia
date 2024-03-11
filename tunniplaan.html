@@ -196,36 +196,33 @@
         .then(response => response.json())
         .then(data => {
             const lessonKeys = Object.keys(data.tunnid);
-            const date = new Date(lessonKeys[0]);
-            const month = date.getMonth() + 1;
+            const date = new Date(data.nadal);
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
 
-            const formattedMonth = month < 10 ? '0' + month : month;
             const dayNames = ['E', 'T', 'K', 'N', 'R'];
 
             let timetableHeaderHTML = "<th>Aeg</th>";
 
-            for (let index = 0; index < 5; index++) {
-                const lessonKey = lessonKeys[index];
-                const date = new Date(lessonKey);
+            dayNames.forEach((dayName, index) => {
+                const dayValue = index > 0 ? day + index : day;
+                let formattedDayValue = dayValue < 10 ? '0' + dayValue : dayValue;
 
-                let dayOfMonth = date.getDate();
+                const currentDate = new Date(date.getFullYear(), month - 1, dayValue);
+                const newMonth = currentDate.getMonth() + 1;
 
-                if (lessonKey === undefined) {
-                    dayOfMonth = new Date(lessonKeys[index - 1]).getDate() + 1;
+                if (newMonth !== month) {
+                    month = newMonth;
+                    day = 1 - index;
+                    formattedDayValue = '01';
+                    timetableHeaderHTML += `<th>${dayName} ${formattedDayValue}.${month < 10 ? '0' + month : month}</th>`;
+                } else {
+                    timetableHeaderHTML += `<th>${dayName} ${formattedDayValue}.${month < 10 ? '0' + month : month}</th>`;
                 }
+            });
 
-                const formattedDayOfMonth = dayOfMonth < 10 ? '0' + dayOfMonth : dayOfMonth;
-
-                console.log(lessonKey);
-
-
-                timetableHeaderHTML += `<th>${dayNames[index]} ${formattedDayOfMonth}.${formattedMonth}</th>`;
-            }
 
             document.getElementById("timetable_header").innerHTML = timetableHeaderHTML;
-
-            console.log(lessonKeys);
-            console.log(data.tunnid[lessonKeys[0]]);
         });
 </script>
 

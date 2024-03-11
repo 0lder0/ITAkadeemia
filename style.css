@@ -517,6 +517,7 @@ main {
     border-collapse: collapse;
     margin-top: 20px;
     margin-bottom: 100px;
+    color: black;
 }
 
 .timetable th, .timetable td {
