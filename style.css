@@ -526,7 +526,7 @@ main {
 }
 
 .timetable td {
-    height: 100px
+    height: 100px;
 }
 
 .timetable_event {
@@ -534,6 +534,8 @@ main {
     padding: 5px;
     background: #3ca8ff;
     border-radius: 15px;
+    max-height: 100px;
+    overflow: hidden;
 }
 
 .event_time {
@@ -541,14 +543,36 @@ main {
     font-size: 0.7rem;
 }
 
+.lessonName {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.classroom, .teacher {
+    font-weight: bold;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
 /* Media päring 768px laiustele ja väiksematele ekraanidele */
 @media (max-width: 768px) {
-    .timetable {
-        overflow-x: auto;
+    .timetable th, .timetable td {
+        padding: 5px;
+        font-size: 0.8rem;
     }
-
     .timetable_event {
-        overflow-x: hidden;
+        font-size: 0.7rem;
+    }
+    .event_time {
+        font-size: 0.6rem;
+    }
+    .lessonName, .classroom, .teacher {
+        font-size: 0.6rem;
     }
 
 }
