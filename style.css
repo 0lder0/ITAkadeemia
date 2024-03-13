@@ -540,7 +540,16 @@ main {
     justify-content: end;
     align-items: end;
     gap: 1rem;
-    margin-bottom: 1rem;
+}
+
+#today_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    padding: 0.75rem;
+    cursor: pointer;
 }
 
 #left_arrow, #right_arrow {
@@ -551,6 +560,7 @@ main {
     color: white;
     padding: 1rem;
     font-size: 1rem;
+    margin-bottom: 1rem;
     cursor: pointer;
 }
 

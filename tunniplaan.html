@@ -43,6 +43,7 @@
             <h2 id="timetable_date"></h2>
             </div>
             <div class="timetable_info_right">
+                <p id="today_button">Täna</p>
                 <i id="left_arrow" class="fa fa-chevron-left"></i>
                 <i id="right_arrow" class="fa fa-chevron-right"></i>
             </div>
@@ -53,19 +54,44 @@
                 <td></td>
             </tr>
             <tr id="first_lesson">
-                <td>08:30 - 10:00</td>
-            </tr>
+            <td>08:30 - 10:00</td>
+            <td id="1-1"></td>
+            <td id="1-2"></td>
+            <td id="1-3"></td>
+            <td id="1-4"></td>
+            <td id="1-5"></td>
+        </tr>
             <tr id="second_lesson">
                 <td>10:15 - 11:45</td>
+                <td id="2-1"></td>
+                <td id="2-2"></td>
+                <td id="2-3"></td>
+                <td id="2-4"></td>
+                <td id="2-5"></td>
             </tr>
             <tr id="third_lesson">
                 <td>11:55 - 14:00</td>
+                <td id="3-1"></td>
+                <td id="3-2"></td>
+                <td id="3-3"></td>
+                <td id="3-4"></td>
+                <td id="3-5"></td>
             </tr>
             <tr id="fourth_lesson">
                 <td>14:10 - 15:40</td>
+                <td id="4-1"></td>
+                <td id="4-2"></td>
+                <td id="4-3"></td>
+                <td id="4-4"></td>
+                <td id="4-5"></td>
             </tr>
             <tr id="fifth_lesson">
                 <td>15:45 - 17:15</td>
+                <td id="5-1"></td>
+                <td id="5-2"></td>
+                <td id="5-3"></td>
+                <td id="5-4"></td>
+                <td id="5-5"></td>
             </tr>
         </table>
         </div>
@@ -113,9 +139,26 @@
 
 <script>
 
-    fetch('https://siseveeb.voco.ee/veebilehe_andmed/tunniplaan?nadal=2024-02-19T00:00:00&grupp=1583')
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+    const firstDayOfWeek = new Date(today);
+    firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 6) % 7);
+    let currentWeek = firstDayOfWeek.toISOString().split('T')[0];
+
+    function clearTimetable() {
+        const lessonCells = document.querySelectorAll('.timetable td');
+        lessonCells.forEach(cell => {
+            if (cell.id !== '') {
+            cell.innerHTML = '';
+            }
+        });
+    }
+
+    function fetchTimetableData(currentWeek) {
+    fetch(`https://siseveeb.voco.ee/veebilehe_andmed/tunniplaan?nadal=${currentWeek}T00:00:00&grupp=1583`)
         .then(response => response.json())
         .then(data => {
+            let dayIndex = 1;
             const date = new Date(data.nadal);
             let day = date.getDate();
             let month = date.getMonth() + 1;
@@ -168,11 +211,10 @@
                 currentWeek.push(formattedDate);
             }
 
+            clearTimetable();
 
 
             // Create timetable events
-
-            const timetableRows = document.querySelectorAll('.timetable tr:not(#timetable_header)');
 
             const lessonTimes = [
                 '08:30 - 10:00',
@@ -182,20 +224,19 @@
                 '15:45 - 17:15'
             ];
 
-            for (let day of currentWeek) {
-                if (data.tunnid[day] === undefined) {
-                    for (let i = 0; i < timetableRows.length; i++) {
-                        const emptyCell = document.createElement('td');
-                        timetableRows[i].appendChild(emptyCell);
-                    }
+
+            for (let dayOfWeek of currentWeek) {
+
+                if (data.tunnid[dayOfWeek] === undefined) {
+
+                    dayIndex++;
                     continue;
                 }
 
-                for (let lessonTime of lessonTimes) {
-                    let lessonFound = false;
 
-                    for (let i = 0; i < data.tunnid[day].length; i++) {
-                        const lesson = data.tunnid[day][i];
+                for (let lessonTime of lessonTimes) {
+                    for (let i = 0; i < data.tunnid[dayOfWeek].length; i++) {
+                        const lesson = data.tunnid[dayOfWeek][i];
                         const lessonStart = lesson.algus;
                         const lessonEnd = lesson.lopp;
 
@@ -208,27 +249,19 @@
                     <div class="event_time">
                         ${lessonTime}
                     </div>
-                        <div class="lessonName">${lessonName}</div>
-                        <div class="classroom">${classroom}</div>
-                        <div class="teacher">${teacher}</div>
+                    <div class="lessonName">${lessonName}</div>
+                    <div class="classroom">${classroom}</div>
+                    <div class="teacher">${teacher}</div>
                 </div>`;
 
-                            const lessonCell = document.createElement('td');
+                            const lessonCell = document.getElementById(`${lessonTimes.indexOf(lessonTime) + 1}-${dayIndex}`);
                             lessonCell.innerHTML = lessonHTML;
-                            timetableRows[lessonTimes.indexOf(lessonTime)].appendChild(lessonCell);
-
-                            lessonFound = true;
-                            break;
                         }
                     }
-
-                    // If no lesson found for this time slot, insert an empty <td>
-                    if (!lessonFound) {
-                        const emptyCell = document.createElement('td');
-                        timetableRows[lessonTimes.indexOf(lessonTime)].appendChild(emptyCell);
-                    }
                 }
+                dayIndex++;
             }
+
 
             const months = {
                 '1': 'jaan',
@@ -259,6 +292,36 @@
 
             document.getElementById("timetable_date").innerHTML = dateText;
         });
+}
+
+    fetchTimetableData(currentWeek);
+
+    // Event listener for clicking the right arrow button
+    document.getElementById("right_arrow").addEventListener("click", function() {
+        firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 7);
+        currentWeek = firstDayOfWeek.toISOString().split('T')[0];
+        document.getElementById("timetable_date").innerText = currentWeek;
+        fetchTimetableData(currentWeek);
+    });
+
+    // Event listener for clicking the left arrow button
+    document.getElementById("left_arrow").addEventListener("click", function() {
+        firstDayOfWeek.setDate(firstDayOfWeek.getDate() - 7);
+        currentWeek = firstDayOfWeek.toISOString().split('T')[0];
+        document.getElementById("timetable_date").innerText = currentWeek;
+        fetchTimetableData(currentWeek);
+    });
+
+    // Event listener for clicking the today button
+    document.getElementById("today_button").addEventListener("click", function() {
+        const firstDayOfWeek = new Date();
+        firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 6) % 7);
+        currentWeek = firstDayOfWeek.toISOString().split('T')[0];
+        document.getElementById("timetable_date").innerText = currentWeek;
+        fetchTimetableData(currentWeek);
+    });
+
+
 </script>
 
 </html>
