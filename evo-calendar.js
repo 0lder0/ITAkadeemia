@@ -35,7 +35,7 @@
                 titleFormat: 'MM yyyy',
                 eventHeaderFormat: 'MM d, yyyy',
                 firstDayOfWeek: 1,
-                language: 'en',
+                language: 'ee',
                 todayHighlight: false,
                 sidebarDisplayDefault: true,
                 sidebarToggler: true,
@@ -62,70 +62,18 @@
                         closeSidebarText: "Close sidebar",
                         closeEventListText: "Close event list"
                     },
-                    es: {
-                        days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
-                        daysShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
-                        daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
-                        months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-                        monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
-                        noEventForToday: "No hay evento para hoy.. ¡así que descanse! :)",
-                        noEventForThisDay: "Ningún evento para este día.. ¡así que descanse! :)",
-                        previousYearText: "Año anterior",
-                        nextYearText: "El próximo año",
-                        closeSidebarText: "Cerrar la barra lateral",
-                        closeEventListText: "Cerrar la lista de eventos"
-                    },
-                    de: {
-                        days: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
-                        daysShort: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
-                        daysMin: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
-                        months: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
-                        monthsShort: ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
-                        noEventForToday: "Keine Veranstaltung für heute.. also ruhen Sie sich aus! :)",
-                        noEventForThisDay: "Keine Veranstaltung für diesen Tag.. also ruhen Sie sich aus! :)",
-                        previousYearText: "Vorheriges Jahr",
-                        nextYearText: "Nächstes Jahr",
-                        closeSidebarText: "Schließen Sie die Seitenleiste",
-                        closeEventListText: "Schließen Sie die Ereignisliste"
-                    },
-                    pt: {
-                        days: ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"],
-                        daysShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
-                        daysMin: ["Do", "2a", "3a", "4a", "5a", "6a", "Sa"],
-                        months: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
-                        monthsShort: ["Jan", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
-                        noEventForToday: "Nenhum evento para hoje.. então descanse! :)",
-                        noEventForThisDay: "Nenhum evento para este dia.. então descanse! :)",
-                        previousYearText: "Ano anterior",
-                        nextYearText: "Próximo ano",
-                        closeSidebarText: "Feche a barra lateral",
-                        closeEventListText: "Feche a lista de eventos"
-                    },
-                    fr: {
-                        days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
-                        daysShort: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
-                        daysMin: ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa"],
-                        months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-                        monthsShort: ["Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "Déc"],
-                        noEventForToday: "Rien pour aujourd'hui... Belle journée :)",
-                        noEventForThisDay: "Rien pour ce jour-ci... Profite de te réposer :)",
-                        previousYearText: "Année précédente",
-                        nextYearText: "L'année prochaine",
-                        closeSidebarText: "Fermez la barre latérale",
-                        closeEventListText: "Fermer la liste des événements"
-                    },
-                    nl: {
-                        days: ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"],
-                        daysShort: ["Zon", "Maan", "Din", "Woe", "Don", "Vrij", "Zat"],
-                        daysMin: ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"],
-                        months: ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"],
-                        monthsShort: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
-                        noEventForToday: "Geen event voor vandaag.. dus rust even uit! :)",
-                        noEventForThisDay: "Geen event voor deze dag.. dus rust even uit! :)",
-                        previousYearText: "Vorig jaar",
-                        nextYearText: "Volgend jaar",
-                        closeSidebarText: "Sluit de zijbalk",
-                        closeEventListText: "Sluit de event lijst"
+                    ee: {
+                        days: ["Pühapäev", "Esmaspäev", "Teisipäev", "Kolmapäev", "Neljapäev", "Reede", "Laupäev"],
+                        daysShort: ["Püh", "Esm", "Tei", "Kol", "Nel", "Ree", "Lau"],
+                        daysMin: ["P", "E", "T", "K", "N", "R", "L"],
+                        months: ["Jaanuar", "Veebruar", "Märts", "Aprill", "Mai", "Juuni", "Juuli", "August", "September", "Oktoober", "November", "Detsember"],
+                        monthsShort: ["Jaan", "Veeb", "Märts", "Apr", "Mai", "Juuni", "Juuli", "Aug", "Sept", "Okt", "Nov", "Dets"],
+                        noEventForToday: "Sellel päeval veel üritusi ei ole :)",
+                        noEventForThisDay: "Sellel päeval veel üritusi ei ole :)",
+                        previousYearText: "Eelmine aasta",
+                        nextYearText: "Järgmine aasta",
+                        closeSidebarText: "Sulge külgriba",
+                        closeEventListText: "Sulge sündmuste loend"
                     }
                 }
             }
@@ -157,7 +105,7 @@
             _.$current = {
                 month: (isNaN(this.month) || this.month == null) ? new Date().getMonth() : this.month,
                 year: (isNaN(this.year) || this.year == null) ? new Date().getFullYear() : this.year,
-                date: _.formatDate(_.initials.dates[_.defaults.language].months[new Date().getMonth()]+' '+new Date().getDate()+' '+ new Date().getFullYear(), _.options.format)
+                date: _.formatDate(_.initials.dates.en.months[new Date().getMonth()]+' '+new Date().getDate()+' '+ new Date().getFullYear(), _.options.format)
             }
 
             // ACTIVE
@@ -306,6 +254,7 @@
         if (format.toDisplay)
             return format.toDisplay(date, format, language);
 
+
         var ndate = new Date(date);
         // if (!_.isValidDate(ndate)) { // test
         //     ndate = new Date(date.replace(/-/g, '/'))
@@ -321,6 +270,7 @@
             yy: ndate.getFullYear().toString().substring(2),
             yyyy: ndate.getFullYear()
         };
+
         
         val.dd = (val.d < 10 ? '0' : '') + val.d;
         val.mm = (val.m < 10 ? '0' : '') + val.m;
@@ -604,6 +554,7 @@
         var _ = this, markup, hasEventToday = false;
         
         _.$active.events = [];
+        console.log(_)
         // Event date
         var title = _.formatDate(_.$active.date, _.options.eventHeaderFormat, _.options.language);
         _.$elements.eventEl.find('.event-header > p').text(title);
@@ -698,14 +649,14 @@
         _.$elements.sidebarEl.find('.calendar-months > [data-month-val]').removeClass('active-month');
         _.$elements.sidebarEl.find('.calendar-months > [data-month-val="'+_.$active.month+'"]').addClass('active-month');
     }
-
+console.log(this)
     // v1.0.0 - Build Calendar: Title, Days
     EvoCalendar.prototype.buildCalendar = function() {
         var _ = this, markup, title;
         
         _.calculateDays();
 
-        title = _.formatDate(new Date(_.$label.months[_.$active.month] +' 1 '+ _.$active.year), _.options.titleFormat, _.options.language);
+        title = _.formatDate(new Date(_.initials.dates.en.months[_.$active.month] +' 1 '+ _.$active.year), _.options.titleFormat, _.options.language);
         _.$elements.innerEl.find('.calendar-table th').text(title);
 
         _.$elements.innerEl.find('.calendar-body').remove(); // Clear days
@@ -721,7 +672,7 @@
                                 }
                                 markup += '<td class="'+dayClass+'">';
 
-                                var thisDay = _.formatDate(_.$label.months[_.$active.month]+' '+day+' '+_.$active.year, _.options.format);
+                                var thisDay = _.formatDate(_.initials.dates.en.months[_.$active.month]+' '+day+' '+_.$active.year, _.options.format);
                                 markup += '<div class="day" role="button" data-date-val="'+thisDay+'">'+day+'</div>';
                                 day++;
                             } else {
@@ -921,6 +872,7 @@
     EvoCalendar.prototype.selectDate = function(event) {
         var _ = this;
         var oldDate = _.$active.date;
+        console.log(event.currentTarget)
         var date, year, month, activeDayEl, isSameDate;
 
         if (typeof event === 'string' || typeof event === 'number' || event instanceof Date) {
