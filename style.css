@@ -444,7 +444,7 @@ main {
 }
 
 
-/* Modal Styles */
+/* Modal - Kevin */
 .modal {
     display: none;
     position: fixed;
@@ -491,7 +491,6 @@ main {
     cursor: pointer;
 }
 
-/* Form Styles */
 .modalForm {
     display: grid;
     gap: 10px;
@@ -510,7 +509,130 @@ main {
     cursor: pointer;
 }
 
-/* konsultatsioonid - Lilii */
+
+/* Tunniplaan - Kevin */
+
+#timetable_title {
+    margin-top: 50px;
+}
+
+.timetable_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.timetable_info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.timetable_info_left {
+    display: flex;
+    justify-content: start;
+}
+
+.timetable_info_right {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    gap: 1rem;
+}
+
+#today_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    padding: 0.75rem;
+    cursor: pointer;
+}
+
+#left_arrow, #right_arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.timetable {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 100px;
+    color: black;
+}
+
+.timetable th, .timetable td {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.timetable td {
+    height: 100px;
+}
+
+.timetable_event {
+    font-size: .8rem;
+    padding: 5px;
+    background: #3ca8ff;
+    border-radius: 15px;
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.event_time {
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+
+.lessonName {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.classroom, .teacher {
+    font-weight: bold;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+/* Media päring 768px laiustele ja väiksematele ekraanidele */
+@media (max-width: 768px) {
+    .timetable th, .timetable td {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+    .timetable_event {
+        font-size: 0.7rem;
+    }
+    .event_time {
+        font-size: 0.6rem;
+    }
+    .lessonName, .classroom, .teacher {
+        font-size: 0.6rem;
+    }
+
+}
+
+
+
+/* Konsultatsioonid - Lilii */
 
 .search_box {
     display: flex;

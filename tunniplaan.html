@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="evo-calendar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tartu Rakenduslik Kolledž - IT Akadeemia</title>
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="navbar_left">
+            <div class="navbar_logo">
+                <img src="https://voco.ee/wp-content/uploads/VOCO-Logo.svg" alt="logo">
+            </div>
+        </div>
+        <div class="navbar_right">
+            <div class="navbar_menu">
+                <a>Konsultatsioonid</a>
+                <a>Erialad</a>
+                <a>Praktika</a>
+                <a>Kutsemeistrivõistlused</a>
+                <a>Tunnustused</a>
+            </div>
+        </div>
+        <div class="menu_icon">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="akadeemiacontainer">
+        <h1 id="timetable_title">Tunniplaan</h1>
+
+
+        <div class="timetable_container">
+            <div class="timetable_info">
+            <div class="timetable_info_left">
+            <h2 id="timetable_date"></h2>
+            </div>
+            <div class="timetable_info_right">
+                <p id="today_button">Täna</p>
+                <i id="left_arrow" class="fa fa-chevron-left"></i>
+                <i id="right_arrow" class="fa fa-chevron-right"></i>
+            </div>
+            </div>
+
+        <table class="timetable">
+            <tr id="timetable_header">
+                <td></td>
+            </tr>
+            <tr id="first_lesson">
+            <td>08:30 - 10:00</td>
+            <td id="1-1"></td>
+            <td id="1-2"></td>
+            <td id="1-3"></td>
+            <td id="1-4"></td>
+            <td id="1-5"></td>
+        </tr>
+            <tr id="second_lesson">
+                <td>10:15 - 11:45</td>
+                <td id="2-1"></td>
+                <td id="2-2"></td>
+                <td id="2-3"></td>
+                <td id="2-4"></td>
+                <td id="2-5"></td>
+            </tr>
+            <tr id="third_lesson">
+                <td>11:55 - 14:00</td>
+                <td id="3-1"></td>
+                <td id="3-2"></td>
+                <td id="3-3"></td>
+                <td id="3-4"></td>
+                <td id="3-5"></td>
+            </tr>
+            <tr id="fourth_lesson">
+                <td>14:10 - 15:40</td>
+                <td id="4-1"></td>
+                <td id="4-2"></td>
+                <td id="4-3"></td>
+                <td id="4-4"></td>
+                <td id="4-5"></td>
+            </tr>
+            <tr id="fifth_lesson">
+                <td>15:45 - 17:15</td>
+                <td id="5-1"></td>
+                <td id="5-2"></td>
+                <td id="5-3"></td>
+                <td id="5-4"></td>
+                <td id="5-5"></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</main>
+
+
+<footer class="footer">
+    <div class="container-footer">
+        <div class="footer_content">
+            <div class="footer_logo">
+                <a href="https://voco.ee/" class="footer_logo"><img src="https://voco.ee/wp-content/uploads/VOCO.svg" alt="Tartu Rakenduslik Kolledž" class="footer_logoImg"></a>
+            </div>
+            <div class="footer_mainCol">
+                <div class="footer_grid">
+                    <div class="footer_col">
+                        <h3 class="footer_title">Kontakt</h3>
+                        <div class="footer_text">
+                            <p><a href="mailto:info@voco.ee">info@voco.ee</a></p>
+                            <p>7 361 810</p>
+                        </div>
+                    </div>
+                    <div class="footer_col">
+                        <h3 class="footer_title">VOCO</h3>
+                        <div class="footer_text">
+                            <p>Kopli 1</p>
+                            <p>Tartu 50115 Eesti</p>
+                        </div>
+                    </div>
+                    <div class="footer_col">
+                        <h3 class="footer_title">Privaatsustingimused</h3>
+                        <div class="footer_text">
+                            <p><a href="https://voco.ee/andmekaitse-info/" target="">Andmekaitse</a></p>
+                        </div>
+                        <div class="footer_text">
+                            <p><a href="https://voco.ee/kupsised/ " target="">Küpsised</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+<script>
+
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+    const firstDayOfWeek = new Date(today);
+    firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 6) % 7);
+    let currentWeek = firstDayOfWeek.toISOString().split('T')[0];
+
+    function clearTimetable() {
+        const lessonCells = document.querySelectorAll('.timetable td');
+        lessonCells.forEach(cell => {
+            if (cell.id !== '') {
+            cell.innerHTML = '';
+            }
+        });
+    }
+
+    function fetchTimetableData(currentWeek) {
+    fetch(`https://siseveeb.voco.ee/veebilehe_andmed/tunniplaan?nadal=${currentWeek}T00:00:00&grupp=1583`)
+        .then(response => response.json())
+        .then(data => {
+            let dayIndex = 1;
+            const date = new Date(data.nadal);
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+
+
+            // Create timetable header
+
+            const dayNames = ['E', 'T', 'K', 'N', 'R'];
+
+            let timetableHeaderHTML = "<th>Aeg</th>";
+
+            dayNames.forEach((dayName, index) => {
+                const dayValue = index > 0 ? day + index : day;
+                let formattedDayValue = dayValue < 10 ? '0' + dayValue : dayValue;
+
+                const currentDate = new Date(date.getFullYear(), month - 1, dayValue);
+                const newMonth = currentDate.getMonth() + 1;
+
+                if (newMonth !== month) {
+                    month = newMonth;
+                    day = 1 - index;
+                    formattedDayValue = '01';
+                    timetableHeaderHTML += `<th>${dayName} ${formattedDayValue}.${month < 10 ? '0' + month : month}</th>`;
+                } else {
+                    timetableHeaderHTML += `<th>${dayName} ${formattedDayValue}.${month < 10 ? '0' + month : month}</th>`;
+                }
+            });
+
+            document.getElementById("timetable_header").innerHTML = timetableHeaderHTML;
+
+
+
+            // Get current week
+
+            const startDate = date;
+            const endDate = new Date(startDate.getTime());
+            endDate.setDate(startDate.getDate() + 4);
+
+            let currentWeek = [];
+
+            for (let currentDate = new Date(startDate); currentDate <= endDate; currentDate.setDate(currentDate.getDate() + 1)) {
+                const year = currentDate.getFullYear();
+                const month = currentDate.getMonth() + 1;
+                const day = currentDate.getDate();
+
+                const formattedMonth = month < 10 ? '0' + month : month;
+                const formattedDay = day < 10 ? '0' + day : day;
+
+                const formattedDate = `${year}-${formattedMonth}-${formattedDay}`;
+                currentWeek.push(formattedDate);
+            }
+
+            clearTimetable();
+
+
+            // Create timetable events
+
+            const lessonTimes = [
+                '08:30 - 10:00',
+                '10:15 - 11:45',
+                '11:55 - 14:00',
+                '14:10 - 15:40',
+                '15:45 - 17:15'
+            ];
+
+
+            for (let dayOfWeek of currentWeek) {
+
+                if (data.tunnid[dayOfWeek] === undefined) {
+
+                    dayIndex++;
+                    continue;
+                }
+
+
+                for (let lessonTime of lessonTimes) {
+                    for (let i = 0; i < data.tunnid[dayOfWeek].length; i++) {
+                        const lesson = data.tunnid[dayOfWeek][i];
+                        const lessonStart = lesson.algus;
+                        const lessonEnd = lesson.lopp;
+
+                        if (lessonStart === lessonTime.split(' - ')[0] && lessonEnd === lessonTime.split(' - ')[1]) {
+                            const lessonName = lesson.aine;
+                            const classroom = lesson.ruum;
+                            const teacher = lesson.opetaja;
+
+                            const lessonHTML = `<div class="timetable_event">
+                    <div class="event_time">
+                        ${lessonTime}
+                    </div>
+                    <div class="lessonName">${lessonName}</div>
+                    <div class="classroom">${classroom}</div>
+                    <div class="teacher">${teacher}</div>
+                </div>`;
+
+                            const lessonCell = document.getElementById(`${lessonTimes.indexOf(lessonTime) + 1}-${dayIndex}`);
+                            lessonCell.innerHTML = lessonHTML;
+                        }
+                    }
+                }
+                dayIndex++;
+            }
+
+
+            const months = {
+                '1': 'jaan',
+                '2': 'veebr',
+                '3': 'märts',
+                '4': 'apr',
+                '5': 'mai',
+                '6': 'juuni',
+                '7': 'juuli',
+                '8': 'aug',
+                '9': 'sept',
+                '10': 'okt',
+                '11': 'nov',
+                '12': 'dets'
+            };
+
+
+            const startDateMonth = months[(startDate.getMonth() + 1).toString()];
+            const endDateMonth = months[(endDate.getMonth() + 1).toString()];
+
+            let dateText;
+
+            if (startDate.getMonth() !== endDate.getMonth()) {
+                dateText = `${startDate.getDate()}. ${startDateMonth} ─ ${endDate.getDate()}. ${endDateMonth} ${date.getFullYear()}`;
+            } else {
+                dateText = `${startDate.getDate()}. ─ ${endDate.getDate()}. ${endDateMonth} ${date.getFullYear()}`;
+            }
+
+            document.getElementById("timetable_date").innerHTML = dateText;
+        });
+}
+
+    fetchTimetableData(currentWeek);
+
+    // Event listener for clicking the right arrow button
+    document.getElementById("right_arrow").addEventListener("click", function() {
+        firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 7);
+        currentWeek = firstDayOfWeek.toISOString().split('T')[0];
+        document.getElementById("timetable_date").innerText = currentWeek;
+        fetchTimetableData(currentWeek);
+    });
+
+    // Event listener for clicking the left arrow button
+    document.getElementById("left_arrow").addEventListener("click", function() {
+        firstDayOfWeek.setDate(firstDayOfWeek.getDate() - 7);
+        currentWeek = firstDayOfWeek.toISOString().split('T')[0];
+        document.getElementById("timetable_date").innerText = currentWeek;
+        fetchTimetableData(currentWeek);
+    });
+
+    // Event listener for clicking the today button
+    document.getElementById("today_button").addEventListener("click", function() {
+        const firstDayOfWeek = new Date();
+        firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 6) % 7);
+        currentWeek = firstDayOfWeek.toISOString().split('T')[0];
+        document.getElementById("timetable_date").innerText = currentWeek;
+        fetchTimetableData(currentWeek);
+    });
+
+
+</script>
+
+</html>
