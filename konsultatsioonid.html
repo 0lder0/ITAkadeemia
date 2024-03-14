@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,145 +10,191 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Tartu Rakenduslik Kolledž - IT Akadeemia</title>
 </head>
+
 <body>
 
-<!-- Header -->
-
-<header>
-    <div class="navbar">
-        <div class="navbar_left">
-            <div class="navbar_logo">
-                <img src="https://voco.ee/wp-content/uploads/VOCO-Logo.svg" alt="logo">
-            </div>
-        </div>
-        <div class="navbar_right">
-            <div class="navbar_menu">
-                <a>Konsultatsioonid</a>
-                <a>Erialad</a>
-                <a>Praktika</a>
-                <a>Kutsemeistrivõistlused</a>
-                <a>Tunnustused</a>
-            </div>
-        </div>
-        <div class="menu_icon">
-            <i class="fa fa-bars"></i>
-        </div>
-    </div>
-</header>
+    <!-- Header -->
 
 
-<div class="akadeemiacontainer">
-    <div class="header">
-        <div class="header_content">
-            <h1 class="header_title">IT Akadeemia Konsultatsioonid</h1>
-        </div>
-        <p class="header_text">Soovid leida õpetajate konsultatsiooni aegu? Sisesta õpetaja nimi otsingu kasti ja leia endale sobiv aeg:</p>
-    </div>
-    <div class="search_box">
-        <form class="searchForm" role="search">
-            <label>
-                <input class="searchFrom_field" type="text" name="search" placeholder="Otsi õpetajat">
-            </label>
-            <button class="searchForm_submit" type="submit">Otsi</button>
-        </form>
-    </div>
-    <div class="header">
-        <div class="header_content">
-            <h1 class="header_title">Otsingutulemused:</h1>
-        </div>
-    </div>
-    <div class="dataTable">
-        <table>
-            <thead>
-                <tr>
-                    <th>Õpetaja</th>
-                    <th>Konsultatsiooni aeg</th>
-                    <th>Broneeri</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Õpetaja 1</td>
-                    <td>01.01.2021 12:00-14:00</td>
-                    <td><a>Broneeri</a></td>
-                </tr>
-                <tr>
-                    <td>Õpetaja 2</td>
-                    <td>01.01.2021 12:00-14:00</td>
-                    <td><a>Broneeri</a></td>
-                </tr>
-                <tr>
-                    <td>Õpetaja 3</td>
-                    <td>01.01.2021 12:00-14:00</td>
-                    <td><a>Broneeri</a></td>
-                </tr>
-                <tr>
-                    <td>Õpetaja 4</td>
-                    <td>01.01.2021 12:00-14:00</td>
-                    <td><a>Broneeri</a></td>
-                </tr>
-                <tr>
-                    <td>Õpetaja 5</td>
-                    <td>01.01.2021 12:00-14:00</td>
-                    <td><a></a>Broneeri</a></td>
-                </tr>
-                <tr>
-                    <td>Õpetaja 6</td>
-                    <td>01.01.2021 12:00-14:00</td>
-                    <td><a>Broneeri</a></td>
-                </tr>
-                <tr>
-                    <td>Õpetaja 7</td>
-                    <td>01.01.2021 12:00-14:00</td>
-                    <td><a>Broneeri</a></td>
-                </tr>
-                <tr>
-                    <td>Õpetaja 8</td>
-                    <td>01.01.2021 12:00-14:00</td>
-                    <td><a>Broneeri</a></td>
-                </tr>
-                <tr>
-                    <td>Õpetaja 9</td>
-                    <td>01.01.2021 12:00-14:00</td>
-                    <td><a>Broneeri</a></td>
-                </tr>
-        </table>
-    </div>
-</div>
-
-<footer class="footer">
-    <div class="container-footer">
-        <div class="footer_content">
-            <div class="footer_logo">
-                <a href="https://voco.ee/" class="footer_logo"><img src="https://voco.ee/wp-content/uploads/VOCO.svg" alt="Tartu Rakenduslik Kolledž" class="footer_logoImg"></a>
-            </div>
-            <div class="footer_mainCol">
-                <div class="footer_grid">
-                    <div class="footer_col">
-                        <h3 class="footer_title">Kontakt</h3>
-                        <div class="footer_text">
-                            <p><a href="mailto:info@voco.ee">info@voco.ee</a></p>
-                            <p>7 361 810</p>
-                        </div>
+    <header>
+        <div class="topBar">
+            <div class="topBar-container">
+                <div class="topBar-left">
+                    <div class="socialIcons socialIcons-dark">
+                        <a href="https://www.facebook.com/tartuvoco/" class="socialIcons_icon" target="_blank">
+                            <div class="ScalingSvg ScalingSvg-facebook">
+                                <svg class="ScalingSvg_shape">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-facebook"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://www.tiktok.com/@tartuvoco" class="socialIcons_icon" target="_blank">
+                            <div class="ScalingSvg ScalingSvg-tiktok">
+                                <svg class="ScalingSvg_shape">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-tiktok"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/tartuvoco/" class="socialIcons_icon" target="_blank">
+                            <div class="ScalingSvg ScalingSvg-instagram">
+                                <svg class="ScalingSvg_shape">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-instagram"></use>
+                                </svg>
+                            </div>
+                        </a>
                     </div>
-                    <div class="footer_col">
-                        <h3 class="footer_title">VOCO</h3>
-                        <div class="footer_text">
-                            <p>Kopli 1</p>
-                            <p>Tartu 50115 Eesti</p>
-                        </div>
+                </div>
+                <div class="topBar-right">
+                    <div class="topBar_menu">
+                        <a href="tunniplaan.html">Tunniplaan</a>
+                        <a href="https://voco.ee/kontakt/">Kontakt</a>
+                        <a href="https://siseveeb.voco.ee">Siseveeb</a>
                     </div>
-                    <div class="footer_col">
-                        <h3 class="footer_title">Privaatsustingimused</h3>
-                        <div class="footer_text">
-                            <p><a href="https://voco.ee/andmekaitse-info/" target="">Andmekaitse</a></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="navbar">
+            <div class="navbar_left">
+                <div class="navbar_logo">
+                    <a href="index.html">
+                        <img src="https://voco.ee/wp-content/uploads/VOCO-Logo.svg" alt="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="navbar_right">
+                <div class="navbar_menu">
+                    <a>Konsultatsioonid</a>
+                    <a>Erialad</a>
+                    <a>Praktika</a>
+                    <a>Kutsemeistrivõistlused</a>
+                    <a>Tunnustused</a>
+                </div>
+            </div>
+            <div class="menu_icon">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="akadeemiacontainer">
+        <div class="header">
+            <div class="header_content">
+                <h1 class="header_title">IT Akadeemia Konsultatsioonid</h1>
+            </div>
+            <p class="header_text">Soovid leida õpetajate konsultatsiooni aegu? Sisesta õpetaja nimi otsingu kasti ja
+                leia endale sobiv aeg:</p>
+        </div>
+        <div class="search_box">
+            <form class="searchForm" role="search">
+                <label>
+                    <input class="searchFrom_field" type="text" name="search" placeholder="Otsi õpetajat">
+                </label>
+                <button class="searchForm_submit" type="submit">Otsi</button>
+            </form>
+        </div>
+        <div class="header">
+            <div class="header_content">
+                <h1 class="header_title">Otsingutulemused:</h1>
+            </div>
+        </div>
+        <div class="dataTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Õpetaja</th>
+                        <th>Konsultatsiooni aeg</th>
+                        <th>Broneeri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Õpetaja 1</td>
+                        <td>01.01.2021 12:00-14:00</td>
+                        <td><a>Broneeri</a></td>
+                    </tr>
+                    <tr>
+                        <td>Õpetaja 2</td>
+                        <td>01.01.2021 12:00-14:00</td>
+                        <td><a>Broneeri</a></td>
+                    </tr>
+                    <tr>
+                        <td>Õpetaja 3</td>
+                        <td>01.01.2021 12:00-14:00</td>
+                        <td><a>Broneeri</a></td>
+                    </tr>
+                    <tr>
+                        <td>Õpetaja 4</td>
+                        <td>01.01.2021 12:00-14:00</td>
+                        <td><a>Broneeri</a></td>
+                    </tr>
+                    <tr>
+                        <td>Õpetaja 5</td>
+                        <td>01.01.2021 12:00-14:00</td>
+                        <td><a></a>Broneeri</a></td>
+                    </tr>
+                    <tr>
+                        <td>Õpetaja 6</td>
+                        <td>01.01.2021 12:00-14:00</td>
+                        <td><a>Broneeri</a></td>
+                    </tr>
+                    <tr>
+                        <td>Õpetaja 7</td>
+                        <td>01.01.2021 12:00-14:00</td>
+                        <td><a>Broneeri</a></td>
+                    </tr>
+                    <tr>
+                        <td>Õpetaja 8</td>
+                        <td>01.01.2021 12:00-14:00</td>
+                        <td><a>Broneeri</a></td>
+                    </tr>
+                    <tr>
+                        <td>Õpetaja 9</td>
+                        <td>01.01.2021 12:00-14:00</td>
+                        <td><a>Broneeri</a></td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="footer_content">
+                <div class="footer_logo">
+                    <a href="https://voco.ee/" class="footer_logo"><img
+                            src="https://voco.ee/wp-content/uploads/VOCO.svg" alt="Tartu Rakenduslik Kolledž"
+                            class="footer_logoImg"></a>
+                </div>
+                <div class="footer_mainCol">
+                    <div class="footer_grid">
+                        <div class="footer_col">
+                            <h3 class="footer_title">Kontakt</h3>
+                            <div class="footer_text">
+                                <p><a href="mailto:info@voco.ee">info@voco.ee</a></p>
+                                <p>7 361 810</p>
+                            </div>
                         </div>
-                        <div class="footer_text">
-                            <p><a href="https://voco.ee/kupsised/ " target="">Küpsised</a></p>
+                        <div class="footer_col">
+                            <h3 class="footer_title">VOCO</h3>
+                            <div class="footer_text">
+                                <p>Kopli 1</p>
+                                <p>Tartu 50115 Eesti</p>
+                            </div>
+                        </div>
+                        <div class="footer_col">
+                            <h3 class="footer_title">Privaatsustingimused</h3>
+                            <div class="footer_text">
+                                <p><a href="https://voco.ee/andmekaitse-info/" target="">Andmekaitse</a></p>
+                            </div>
+                            <div class="footer_text">
+                                <p><a href="https://voco.ee/kupsised/ " target="">Küpsised</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>

@@ -5,7 +5,7 @@
     font-style: normal;
 }
 
-body{
+body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
@@ -15,9 +15,91 @@ body{
     text-align: left;
     background-color: #fff;
 }
+
 main {
     display: block;
 }
+
+/*Top-navbar - Lilii*/
+
+.topBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 50px;
+    padding: 0 80px;
+    z-index: 100;
+    flex: 1;
+
+}
+
+.topBar-left {
+    display: flex;
+    align-items: center;
+    float: left;
+    margin-left: 15px;
+    flex-wrap: wrap;
+}
+
+
+.topBar-right {
+    display: flex;
+    position: relative;
+    align-items: center;
+    float: right;
+    flex-direction: row;
+    height: 100%;
+    padding-right: 100px;
+}
+
+.topBar-right a,
+.topBar-left a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    display: inline-block;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.topBar-container {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.socialIcons_icon {
+    display: block;
+    width: 1.125rem;
+    fill: #000;
+    float: left;
+}
+
+.ScalingSvg_shape {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    fill: #000;
+}
+
+.ScalingSvg {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding: 0 0 100%;
+}
+
+
+
 
 /* Navbar - Lilii */
 
@@ -151,22 +233,23 @@ main {
     width: 550px;
     color: #fff;
 }
+
 .pageIntro a {
     display: flex;
     cursor: pointer;
 }
 
-.pageIntro a > .pageIntro_button {
+.pageIntro a>.pageIntro_button {
     transform: translateX(0%) translateY(0%);
     transition: 0.3s ease-in-out;
 }
 
-.pageIntro a:hover > #pageIntro_btn1 {
+.pageIntro a:hover>#pageIntro_btn1 {
     transform: translateX(-5%) translateY(-24%);
     transition: 0.3s ease-in-out;
 }
 
-.pageIntro a:hover > #pageIntro_btn2 {
+.pageIntro a:hover>#pageIntro_btn2 {
     transform: translateX(-2%) translateY(-12%);
     transition: 0.3s ease-in-out;
 }
@@ -185,18 +268,21 @@ main {
     height: 66px;
     flex-shrink: 0;
 }
-.hero_button{
+
+.hero_button {
     margin-top: 80px;
 }
+
 #pageIntro_btn1 {
     color: black;
     background: white;
     z-index: 3;
 }
+
 #pageIntro_btn2 {
     background: black;
     border: white 2px solid;
-    z-index:2;
+    z-index: 2;
 }
 
 
@@ -223,7 +309,7 @@ main {
 }
 
 /* Akadeemia container - Gervin */
-.akadeemiacontainer{
+.akadeemiacontainer {
     width: 100%;
     padding-right: 10px;
     padding-left: 10px;
@@ -234,30 +320,30 @@ main {
 
 @media (min-width: 576px) {
     .akadeemiacontainer {
-        max-width:540px
+        max-width: 540px
     }
 }
 
 @media (min-width: 768px) {
     .akadeemiacontainer {
-        max-width:720px
+        max-width: 720px
     }
 }
 
 @media (min-width: 992px) {
     .akadeemiacontainer {
-        max-width:960px
+        max-width: 960px
     }
 }
 
 @media (min-width: 1260px) {
     .akadeemiacontainer {
-        max-width:1200px
+        max-width: 1200px
     }
 }
 
 
-.akadeemiaeosa1{
+.akadeemiaeosa1 {
     padding-top: 4rem;
     padding-right: 10px;
     padding-left: 10px;
@@ -269,24 +355,24 @@ main {
 }
 
 
-.akadeemiatekst{
+.akadeemiatekst {
     font-family: 'Montserrat', sans-serif;
     width: 50%;
     text-align: left;
 }
 
-.akadeemiatekst h2{
+.akadeemiatekst h2 {
     font-size: 3rem;
     color: black;
     margin: 0 0 3.5rem;
 }
 
-.akadeemiatekst p{
+.akadeemiatekst p {
     line-height: 172%;
     color: #000000;
 }
 
-.akadeemialogo{
+.akadeemialogo {
     width: 50%;
     text-align: end;
 }
@@ -295,14 +381,20 @@ main {
 /* Media päring 768px laiustele ja väiksematele ekraanidele */
 @media (max-width: 1000px) {
     .akadeemiaeosa1 {
-        flex-direction: column; /* Muudame flex-suuna veergudest ridadeks */
+        flex-direction: column;
+        /* Muudame flex-suuna veergudest ridadeks */
     }
+
     .akadeemiatekst,
     .akadeemialogo {
-        width: 100%; /* Mõlemad elemendid võtavad 100% laiusest */
-        max-width: none; /* Eemaldame maksimaalse laiuse piirangu */
-        text-align: center; /* Keskendame teksti ja logo */
-        margin-bottom: 20px; /* Lisame marginaali teksti ja logo vahele */
+        width: 100%;
+        /* Mõlemad elemendid võtavad 100% laiusest */
+        max-width: none;
+        /* Eemaldame maksimaalse laiuse piirangu */
+        text-align: center;
+        /* Keskendame teksti ja logo */
+        margin-bottom: 20px;
+        /* Lisame marginaali teksti ja logo vahele */
     }
 }
 
@@ -322,12 +414,12 @@ main {
 }
 
 
-.slaid{
+.slaid {
     display: none
 }
 
 /* lisainfo section */
-.lingidsection{
+.lingidsection {
     width: 100%;
     padding-right: 10px;
     padding-left: 10px;
@@ -335,7 +427,7 @@ main {
     margin-left: auto;
 }
 
-.lisainfo{
+.lisainfo {
     padding-right: 10px;
     padding-left: 10px;
     margin-right: auto;
@@ -345,7 +437,7 @@ main {
     width: 100%;
 }
 
-.lisainfo h2{
+.lisainfo h2 {
     font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
     font-size: 1.875rem;
     color: black;
@@ -353,16 +445,17 @@ main {
 }
 
 
-.lisainfonupud{
+.lisainfonupud {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 
-.lisainfo_button{
+.lisainfo_button {
     flex-grow: 1;
-    background-color: #f5f7fa; /* Green */
+    background-color: #f5f7fa;
+    /* Green */
     border: none;
     color: black;
     padding: 17px;
@@ -377,7 +470,7 @@ main {
     transition: all 0.3s ease-in-out;
 }
 
-.lisainfo_button:hover{
+.lisainfo_button:hover {
     transform: scale(1.1);
 }
 
@@ -553,7 +646,8 @@ main {
     cursor: pointer;
 }
 
-#left_arrow, #right_arrow {
+#left_arrow,
+#right_arrow {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -573,7 +667,8 @@ main {
     color: black;
 }
 
-.timetable th, .timetable td {
+.timetable th,
+.timetable td {
     padding: 5px;
     border: 1px solid black;
 }
@@ -603,7 +698,8 @@ main {
     -webkit-box-orient: vertical;
 }
 
-.classroom, .teacher {
+.classroom,
+.teacher {
     font-weight: bold;
     overflow: hidden;
     display: -webkit-box;
@@ -614,17 +710,24 @@ main {
 
 /* Media päring 768px laiustele ja väiksematele ekraanidele */
 @media (max-width: 768px) {
-    .timetable th, .timetable td {
+
+    .timetable th,
+    .timetable td {
         padding: 5px;
         font-size: 0.8rem;
     }
+
     .timetable_event {
         font-size: 0.7rem;
     }
+
     .event_time {
         font-size: 0.6rem;
     }
-    .lessonName, .classroom, .teacher {
+
+    .lessonName,
+    .classroom,
+    .teacher {
         font-size: 0.6rem;
     }
 
@@ -687,7 +790,7 @@ main {
     justify-content: center;
     margin-top: 20px;
 }
-  
+
 .header_title {
     font-weight: 700;
     font-size: 1.875rem;
