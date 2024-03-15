@@ -373,9 +373,19 @@ main {
 }
 
 .akadeemialogo {
+    display: flex;
+    justify-content: center;
     width: 50%;
-    text-align: end;
+    flex-direction: column;
 }
+
+.akadeemialogo img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
+
 
 
 /* Media päring 768px laiustele ja väiksematele ekraanidele */
