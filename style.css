@@ -129,6 +129,7 @@ main {
     display: inline-block;
     cursor: pointer;
     margin-left: 20px;
+    transition: ease-in-out 0.2s;
 }
 
 .navbar a:hover {
@@ -196,13 +197,13 @@ main {
 /* Banner - Kevin */
 
 .pageIntro {
-    background-color: black;
     background-image: url("images/banner.png");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     display: flex;
-    height: 700px;
+    height: 80vh;
     justify-content: space-between;
 }
 
@@ -219,10 +220,11 @@ main {
 .pageIntro_title {
     display: flex;
     font-family: 'Blackhawk', sans-serif;
-    font-size: 120px;
+    font-size: 7.5rem;
     width: 100%;
     height: 230px;
-    margin-bottom: 120px;
+    margin-top: 120px;
+    margin-bottom: 150px;
     text-align: left;
     color: #fff;
 }
@@ -284,9 +286,36 @@ main {
 }
 
 #pageIntro_btn2 {
-    background: black;
+    background: transparent;
     border: white 2px solid;
     z-index: 2;
+}
+
+@media (max-width: 1800px) {
+    .pageIntro {
+        height: 700px;
+    }
+    .pageIntro_content {
+        left: 50px;
+    }
+
+    .pageIntro_title {
+        font-size: 100px;
+        height: 150px;
+        margin-top: 50px;
+    }
+
+    .pageIntro_text {
+        font-size: 1.5rem;
+        width: 400px;
+    }
+
+    .pageIntro_button {
+        width: 225px;
+        height: 60px;
+        font-size: 15px;
+    }
+
 }
 
 @media (max-width: 1200px) {
@@ -390,6 +419,7 @@ main {
         width: 80%;
         font-size: 40px;
         height: 80px;
+        margin-top: -20px;
         margin-bottom: 50px;
     }
 
