@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="evo-calendar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tartu Rakenduslik Kolledž - IT Akadeemia</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<!-- Header -->
+
+<header>
+    <div class="topBar">
+        <div class="topBar-container">
+            <div class="topBar-left">
+                <div class="socialIcons socialIcons-dark">
+                    <a href="https://www.facebook.com/tartuvoco/" class="socialIcons_icon" target="_blank">
+                        <div class="ScalingSvg ScalingSvg-facebook">
+                            <svg class="ScalingSvg_shape">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-facebook"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="https://www.tiktok.com/@tartuvoco" class="socialIcons_icon" target="_blank">
+                        <div class="ScalingSvg ScalingSvg-tiktok">
+                            <svg class="ScalingSvg_shape">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-tiktok"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/tartuvoco/" class="socialIcons_icon" target="_blank">
+                        <div class="ScalingSvg ScalingSvg-instagram">
+                            <svg class="ScalingSvg_shape">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-instagram"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="topBar-right">
+                <div class="topBar_menu">
+                    <a href="tunniplaan.html">Tunniplaan</a>
+                    <a href="https://voco.ee/kontakt/">Kontakt</a>
+                    <a href="https://siseveeb.voco.ee">Siseveeb</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="navbar">
+        <div class="navbar_left">
+            <div class="navbar_logo">
+                <a href="index.html">
+                    <img src="https://voco.ee/wp-content/uploads/VOCO-Logo.svg" alt="logo">
+                </a>
+            </div>
+        </div>
+        <div class="navbar_right">
+            <div class="navbar_menu">
+                <a href="konsultatsioonid.html">Konsultatsioonid</a>
+                <a>Erialad</a>
+                <a>Praktika</a>
+                <a>Kutsemeistrivõistlused</a>
+                <a>Tunnustused</a>
+            </div>
+        </div>
+        <div class="menu_icon">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+
+<main class="main">
+    <section class="autahvelsection">
+        <div class="autoahvelcontainer">
+            <div class="sidebar">
+                <a href="#">Meie autahvel</a>
+                <a href="#">Meie Meister</a>
+                <a href="#">Aasta õpetajad</a>
+                <a href="#">Tänukirjad</a>
+                <a href="#">Õppijate saavutused</a>
+            </div>
+            <div class="autahvel-text">
+                <div class="content" id="content">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<footer class="footer">
+    <div class="container-footer">
+        <div class="footer_content">
+            <div class="footer_logo">
+                <a href="https://voco.ee/" class="footer_logo"><img
+                        src="https://voco.ee/wp-content/uploads/VOCO.svg" alt="Tartu Rakenduslik Kolledž"
+                        class="footer_logoImg"></a>
+            </div>
+            <div class="footer_mainCol">
+                <div class="footer_grid">
+                    <div class="footer_col">
+                        <h3 class="footer_title">Kontakt</h3>
+                        <div class="footer_text">
+                            <p><a href="mailto:info@voco.ee">info@voco.ee</a></p>
+                            <p>7 361 810</p>
+                        </div>
+                    </div>
+                    <div class="footer_col">
+                        <h3 class="footer_title">VOCO</h3>
+                        <div class="footer_text">
+                            <p>Kopli 1</p>
+                            <p>Tartu 50115 Eesti</p>
+                        </div>
+                    </div>
+                    <div class="footer_col">
+                        <h3 class="footer_title">Privaatsustingimused</h3>
+                        <div class="footer_text">
+                            <p><a href="https://voco.ee/andmekaitse-info/" target="">Andmekaitse</a></p>
+                        </div>
+                        <div class="footer_text">
+                            <p><a href="https://voco.ee/kupsised/ " target="">Küpsised</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var links = document.querySelectorAll(".sidebar a");
+        var content = document.getElementById("content");
+
+        // Vaikimisi vali esimene menüülink
+        links[0].classList.add("active");
+        showContent(links[0]);
+
+        links.forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                event.preventDefault(); // Takistab vaikimisi lingikäitumist
+
+                // Eemaldab aktiivse klassi kõigist linkidest
+                links.forEach(function(link) {
+                    link.classList.remove("active");
+                });
+
+                // Lisab aktiivse klassi valitud linkile
+                link.classList.add("active");
+
+                // Näitab vastavat sisu
+                showContent(link);
+            });
+        });
+
+        // Funktsioon, mis näitab vastavat sisu valitud menüülingi põhjal
+        function showContent(link) {
+            var title = link.innerText;
+            var textContent = "";
+
+            // Vahetage tekst vastavalt valitud menüüle
+            switch(title) {
+                case "Meie autahvel":
+                    textContent = "Tartu Rakenduslikus Kolledžis töötab palju tublisid ja tunnustatud õpetajaid, kelle üle oleme\n" +
+                        "uhked. Eriline  tänu kuulub Aasta Õpetaja tiitliga ja Haridus- ja Teadusministri tänukirjaga\n" +
+                        "tunnustatud  töötajatele, sest heade õpetajate käe all kasvavad tõelised meistrid. Märkame ja\n" +
+                        "tunnustame töötajaid, kes on igapäevase tubli töö ja isikliku eeskujuga kaasa aidanud kooli\n" +
+                        "eesmärkide saavutamisele. Alates 2013 aastast anname kooli kõrgeima tunnustusena välja välja\n" +
+                        "tiitli “Meie Meister”.\n" +
+                        "\n" +
+                        "Õpilastel on võimalik oma oskused proovile panna erinevatel kutsevõistlustel ning parimatest\n" +
+                        "parimad on saavutanud kõrgeid kohti ka rahvusvahelistel kutsevõistlustel.";
+                    break;
+                case "Meie Meister":
+                    textContent = "Siin on teave meie meistri kohta.";
+                    break;
+                case "Aasta õpetajad":
+                    textContent = "Siin on teave aasta õpetajate kohta.";
+                    break;
+                case "Tänukirjad":
+                    textContent = "Siin on teave tänukirjade kohta.";
+                    break;
+                case "Õppijate saavutused":
+                    textContent = "Siin on teave õppijate saavutuste kohta.";
+                    break;
+                default:
+                    textContent = "Valitud sisu puudub.";
+            }
+
+            content.innerHTML = "<h2>" + title + "</h2><p>" + textContent + "</p>";
+        }
+    });
+</script>
+
+
+
+
+</body>
+</html>
