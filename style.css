@@ -1106,3 +1106,70 @@ main {
 .dataTable table tr:nth-child(even) {
     background-color: #f5f7fa;
 }
+
+/* Autahvel - Gervin */
+
+.autahvelsection{
+    padding: 6rem 0;
+}
+
+.autoahvelcontainer {
+    display: flex;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.autahvel-text{
+    width: 70%;
+    text-align: left;
+}
+
+
+.sidebar {
+    width: 280px;
+    height: 500px;
+    left: 0;
+    top: 0;
+    padding-right: 1.25rem;
+}
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-left: 1px solid;
+}
+.sidebar a:last-child {
+    border-bottom: 1px solid; /* Viimasele lingile alumise piiri lisamine */
+}
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+.content h2 {
+    font-size: 1.875rem;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 3.74rem;
+    padding-top: 0;
+}
+
+.content p {
+    font-size: 1.125rem;
+    color: #000000;
+}
+
+
+@media (min-width: 1260px){
+    .autoahvelcontainer {
+        max-width: 1200px;
+    }
+}
+
+
