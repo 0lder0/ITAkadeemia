@@ -295,6 +295,7 @@ main {
     .pageIntro {
         height: 700px;
     }
+
     .pageIntro_content {
         left: 50px;
     }
@@ -579,7 +580,7 @@ main {
 
 @media (max-width: 586px) {
 
-    .akadeemiaeosa1{
+    .akadeemiaeosa1 {
         padding-top: 2rem;
     }
 
@@ -588,7 +589,7 @@ main {
         margin-bottom: 40px;
     }
 
-    .akadeemiaeosa1 p{
+    .akadeemiaeosa1 p {
         font-size: 1rem;
         width: 100%;
         padding: 0 20px;
@@ -619,6 +620,7 @@ main {
         margin-bottom: 50px;
     }
 }
+
 @media (max-width: 768px) {
     .pildisektsioon {
         margin-left: 20px;
@@ -699,8 +701,9 @@ main {
         width: 100%;
         margin: 6px 2px;
     }
+
     .lisainfonupud {
-      flex-direction: column;
+        flex-direction: column;
     }
 }
 
@@ -1109,7 +1112,7 @@ main {
 
 /* Autahvel - Gervin */
 
-.autahvelsection{
+.autahvelsection {
     padding: 6rem 0;
 }
 
@@ -1123,7 +1126,7 @@ main {
 }
 
 
-.autahvel-text{
+.autahvel-text {
     width: 70%;
     text-align: left;
 }
@@ -1136,6 +1139,7 @@ main {
     top: 0;
     padding-right: 1.25rem;
 }
+
 .sidebar a {
     padding: 10px;
     text-decoration: none;
@@ -1145,9 +1149,12 @@ main {
     border-right: 1px solid;
     border-left: 1px solid;
 }
+
 .sidebar a:last-child {
-    border-bottom: 1px solid; /* Viimasele lingile alumise piiri lisamine */
+    border-bottom: 1px solid;
+    /* Viimasele lingile alumise piiri lisamine */
 }
+
 .sidebar a:hover {
     background-color: #ddd;
 }
@@ -1166,10 +1173,55 @@ main {
 }
 
 
-@media (min-width: 1260px){
+@media (min-width: 1260px) {
     .autoahvelcontainer {
         max-width: 1200px;
     }
 }
 
+/*Erialad - Lilii*/
 
+.poster-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+}
+
+.poster-container a {
+    text-decoration: none;
+}
+
+.poster {
+    border: 2px solid black;
+    margin: 40px;
+    height: 650px;
+    width: 500px;
+}
+
+.poster-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 1260px) {
+    .poster-container {
+        overflow: hidden;
+        flex-direction: column;
+    }
+
+
+}
+
+@media (max-width: 590px) {
+    .poster {
+        height: 500px;
+        width: 350px;
+    }
+
+}
