@@ -1166,6 +1166,9 @@ main {
     color: #000000;
 }
 
+.active {
+    background-color: #ddd;
+}
 
 @media (min-width: 1260px) {
     .autoahvelcontainer {
