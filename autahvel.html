@@ -7,11 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="evo-calendar.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/b6180a886c.js" crossorigin="anonymous"></script>
     <title>Tartu Rakenduslik Kolledž - IT Akadeemia</title>
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -24,23 +21,19 @@
                     <div class="socialIcons socialIcons-dark">
                         <a href="https://www.facebook.com/tartuvoco/" class="socialIcons_icon" target="_blank">
                             <div class="ScalingSvg ScalingSvg-facebook">
-                                <svg class="ScalingSvg_shape">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-facebook"></use>
-                                </svg>
+                                <div class="ScalingSvg ScalingSvg-tiktok">
+                                    <i class="fa-brands fa-tiktok fa-xl"></i>
+                                </div>
                             </div>
                         </a>
                         <a href="https://www.tiktok.com/@tartuvoco" class="socialIcons_icon" target="_blank">
                             <div class="ScalingSvg ScalingSvg-tiktok">
-                                <svg class="ScalingSvg_shape">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-tiktok"></use>
-                                </svg>
+                                <i class="fa-brands fa-facebook fa-xl"></i>
                             </div>
                         </a>
                         <a href="https://www.instagram.com/tartuvoco/" class="socialIcons_icon" target="_blank">
                             <div class="ScalingSvg ScalingSvg-instagram">
-                                <svg class="ScalingSvg_shape">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-instagram"></use>
-                                </svg>
+                                <i class="fa-brands fa-instagram fa-xl"></i>
                             </div>
                         </a>
                     </div>
@@ -70,11 +63,11 @@
                     <a href="erialad.html">Erialad</a>
                     <a>Praktika</a>
                     <a>Kutsemeistrivõistlused</a>
-                    <a>Tunnustused</a>
+                    <a href="autahvel.html">Tunnustused</a>
                 </div>
             </div>
             <div class="menu_icon">
-                <i class="fa fa-bars"></i>
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
@@ -140,8 +133,8 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var links = document.querySelectorAll(".sidebar a");
-            var content = document.getElementById("content");
+            let links = document.querySelectorAll(".sidebar a");
+            let content = document.getElementById("content");
 
             // Vaikimisi vali esimene menüülink
             links[0].classList.add("active");
@@ -166,8 +159,8 @@
 
             // Funktsioon, mis näitab vastavat sisu valitud menüülingi põhjal
             function showContent(link) {
-                var title = link.innerText;
-                var textContent = "";
+                let title = link.innerText;
+                let textContent = "";
 
                 // Vahetage tekst vastavalt valitud menüüle
                 switch (title) {
