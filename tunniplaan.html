@@ -59,7 +59,7 @@
             <div class="navbar_menu">
                 <a href="konsultatsioonid.html">Konsultatsioonid</a>
                 <a href="erialad.html">Erialad</a>
-                <a>Praktika</a>
+                <a href="praktika.html">Praktika</a>
                 <a>Kutsemeistrivõistlused</a>
                 <a href="autahvel.html">Tunnustused</a>
             </div>
@@ -224,7 +224,7 @@
 
     const today = new Date();
     const dayOfWeek = today.getDay();
-    const firstDayOfWeek = new Date(today);
+    let firstDayOfWeek = new Date(today);
     firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 6) % 7);
     let currentWeek = firstDayOfWeek.toISOString().split('T')[0];
 
@@ -402,7 +402,7 @@
 
     // Event listener for clicking the today button
     document.getElementById("today_button").addEventListener("click", function () {
-        const firstDayOfWeek = new Date();
+        firstDayOfWeek = new Date();
         firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 6) % 7);
         currentWeek = firstDayOfWeek.toISOString().split('T')[0];
         document.getElementById("timetable_date").innerText = currentWeek;
