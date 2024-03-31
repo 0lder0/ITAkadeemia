@@ -554,7 +554,6 @@
         var _ = this, markup, hasEventToday = false;
         
         _.$active.events = [];
-        console.log(_)
         // Event date
         var title = _.formatDate(_.$active.date, _.options.eventHeaderFormat, _.options.language);
         _.$elements.eventEl.find('.event-header > p').text(title);
@@ -649,7 +648,6 @@
         _.$elements.sidebarEl.find('.calendar-months > [data-month-val]').removeClass('active-month');
         _.$elements.sidebarEl.find('.calendar-months > [data-month-val="'+_.$active.month+'"]').addClass('active-month');
     }
-console.log(this)
     // v1.0.0 - Build Calendar: Title, Days
     EvoCalendar.prototype.buildCalendar = function() {
         var _ = this, markup, title;
@@ -872,7 +870,6 @@ console.log(this)
     EvoCalendar.prototype.selectDate = function(event) {
         var _ = this;
         var oldDate = _.$active.date;
-        console.log(event.currentTarget)
         var date, year, month, activeDayEl, isSameDate;
 
         if (typeof event === 'string' || typeof event === 'number' || event instanceof Date) {
