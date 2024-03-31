@@ -224,7 +224,6 @@
                 url: 'getEvents.php',
                 type: 'GET',
                 success: function(events) {
-                    console.log(events)
                     // Initialize EvoCalendar with fetched events
                     $('#calendar').evoCalendar({
                         calendarEvents: events
