@@ -1278,3 +1278,19 @@ main {
     flex-direction: column;
     margin-top: 50px;
 }
+
+/*praktika - Lilii*/
+
+.praktika-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+.praktika-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
