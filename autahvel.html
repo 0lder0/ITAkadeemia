@@ -76,14 +76,22 @@
         <section class="autahvelsection">
             <div class="autahvelcontainer">
                 <div class="sidebar">
-                    <a href="#">Meie autahvel</a>
-                    <a href="#">Meie Meister</a>
-                    <a href="#">Aasta õpetajad</a>
-                    <a href="#">Tänukirjad</a>
-                    <a href="#">Õppijate saavutused</a>
+                    <a class="active">Meie autahvel</a>
+                    <a href="meister.html">Meie Meister</a>
+                    <a href="aopetajad.html">Aasta õpetajad</a>
+                    <a href="tanukirjad.html">Tänukirjad</a>
+                    <a href="saavutused.html">Õppijate saavutused</a>
                 </div>
                 <div class="autahvel-text">
-                    <div class="content" id="content">
+                    <div class="content">
+                        <h2>Meie autahvel</h2>
+                        <p>Tartu Rakenduslikus Kolledžis töötab palju tublisid ja tunnustatud õpetajaid, kelle üle oleme
+                            uhked. Eriline  tänu kuulub Aasta Õpetaja tiitliga ja Haridus- ja Teadusministri tänukirjaga
+                            tunnustatud  töötajatele, sest heade õpetajate käe all kasvavad tõelised meistrid. Märkame ja
+                            tunnustame töötajaid, kes on igapäevase tubli töö ja isikliku eeskujuga kaasa aidanud kooli
+                            eesmärkide saavutamisele. Alates 2013 aastast anname kooli kõrgeima tunnustusena välja tiitli “Meie Meister”.</p>
+
+                            <p>Õpilastel on võimalik oma oskused proovile panna erinevatel kutsevõistlustel ning parimatest parimad on saavutanud kõrgeid kohti ka rahvusvahelistel kutsevõistlustel.</p>
                     </div>
                 </div>
             </div>
@@ -130,74 +138,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let links = document.querySelectorAll(".sidebar a");
-            let content = document.getElementById("content");
-
-            // Vaikimisi vali esimene menüülink
-            links[0].classList.add("active");
-            showContent(links[0]);
-
-            links.forEach(function (link) {
-                link.addEventListener("click", function (event) {
-                    event.preventDefault(); // Takistab vaikimisi lingikäitumist
-
-                    // Eemaldab aktiivse klassi kõigist linkidest
-                    links.forEach(function (link) {
-                        link.classList.remove("active");
-                    });
-
-                    // Lisab aktiivse klassi valitud linkile
-                    link.classList.add("active");
-
-                    // Näitab vastavat sisu
-                    showContent(link);
-                });
-            });
-
-            // Funktsioon, mis näitab vastavat sisu valitud menüülingi põhjal
-            function showContent(link) {
-                let title = link.innerText;
-                let textContent = "";
-
-                // Vahetage tekst vastavalt valitud menüüle
-                switch (title) {
-                    case "Meie autahvel":
-                        textContent = "Tartu Rakenduslikus Kolledžis töötab palju tublisid ja tunnustatud õpetajaid, kelle üle oleme\n" +
-                            "uhked. Eriline  tänu kuulub Aasta Õpetaja tiitliga ja Haridus- ja Teadusministri tänukirjaga\n" +
-                            "tunnustatud  töötajatele, sest heade õpetajate käe all kasvavad tõelised meistrid. Märkame ja\n" +
-                            "tunnustame töötajaid, kes on igapäevase tubli töö ja isikliku eeskujuga kaasa aidanud kooli\n" +
-                            "eesmärkide saavutamisele. Alates 2013 aastast anname kooli kõrgeima tunnustusena välja välja\n" +
-                            "tiitli “Meie Meister”.\n" +
-                            "\n" +
-                            "Õpilastel on võimalik oma oskused proovile panna erinevatel kutsevõistlustel ning parimatest\n" +
-                            "parimad on saavutanud kõrgeid kohti ka rahvusvahelistel kutsevõistlustel.";
-                        break;
-                    case "Meie Meister":
-                        textContent = "Siin on teave meie meistri kohta.";
-                        break;
-                    case "Aasta õpetajad":
-                        textContent = "Siin on teave aasta õpetajate kohta.";
-                        break;
-                    case "Tänukirjad":
-                        textContent = "Siin on teave tänukirjade kohta.";
-                        break;
-                    case "Õppijate saavutused":
-                        textContent = "Siin on teave õppijate saavutuste kohta.";
-                        break;
-                    default:
-                        textContent = "Valitud sisu puudub.";
-                }
-
-                content.innerHTML = "<h2>" + title + "</h2><p>" + textContent + "</p>";
-            }
-        });
-    </script>
-
-
-
 
 </body>
 
