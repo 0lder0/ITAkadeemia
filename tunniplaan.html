@@ -446,7 +446,7 @@
     // Event listener for clicking the today button
     document.getElementById("today_button").addEventListener("click", function () {
         firstDayOfWeek = new Date();
-        firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 6) % 7);
+        firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 5) % 7);
         currentWeek = firstDayOfWeek.toISOString().split('T')[0];
         document.getElementById("timetable_date").innerText = currentWeek;
         fetchTimetableData(currentWeek);
