@@ -129,34 +129,9 @@
             </div>
         </div>
 
-        <div id="calendar"></div>
-        <div class="open-modal-btn-wrapper">
-            <button class="open-modal-btn">
-                Open Modal
-            </button>
-        </div>
+    <div id="calendar"></div>
 
     </main>
-
-    <!-- Modal -->
-    <div class="modal" id="addEventModal">
-        <div class="modal-content">
-            <span class="close-modal-btn">&times;</span>
-            <h2>Lisa uus sündmus</h2>
-            <form action="postEvents.php" class="modalForm" id="eventForm" method="post">
-                <label for="eventName">Sündmuse nimi:</label>
-                <input type="text" id="eventName" name="eventName" required>
-
-                <label for="eventDescription">Sündmuse kirjeldus:</label>
-                <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea>
-
-                <label for="eventDate">Sündmuse kuupäev:</label>
-                <input type="date" id="eventDate" name="eventDate" required>
-
-                <button type="submit">Lisa sündmus</button>
-            </form>
-        </div>
-    </div>
 
 
     <!-- Footer -->
@@ -204,28 +179,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="evo-calendar.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $("#eventForm").on("submit", function (event) {
-                // Prevent the default form submission behavior
-                event.preventDefault();
-
-                let formData = $(this).serialize();
-
-                // Perform AJAX request
-                $.ajax({
-                    type: "POST",
-                    url: "postEvents.php",
-                    data: formData,
-                    success: function (response) {
-                        updateCalendar();
-                        $("#addEventModal").css("display", "none");
-                    },
-                    error: function (error) {
-                        console.log(error);
-                    }
-                });
-            });
+<script>
+    $(document).ready(function () {
 
             function updateCalendar() {
                 $.ajax({
