@@ -3,23 +3,13 @@ session_set_cookie_params([
     'secure' => true, 
     'httponly' => true 
 ]);
-
+// Start the session
 session_start();
 session_regenerate_id(true);
 
 // Check if the user is not logged in
 if (!isset($_SESSION['loggedin'])) {
     // Redirect to admin login page
-    header("Location: admin_login.html");
-    exit;
-}
-
-// Logout functionality
-if (isset($_GET['logout'])) {
-    // Destroy the session data
-    session_destroy();
-
-    // Redirect to the login page after logout
     header("Location: admin_login.html");
     exit;
 }
@@ -33,7 +23,6 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <title>Tartu Rakenduslik Kolledž - IT Akadeemia</title>
-
 </head>
 
 <body id="admin-body">
