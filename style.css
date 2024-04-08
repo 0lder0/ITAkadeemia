@@ -173,26 +173,117 @@ main {
 }
 
 .menu_icon i {
+    float: right;
     display: none;
     color: #ffffff;
     cursor: pointer;
     font-size: 36px;
 }
 
-@media (max-width: 768px) {
-    .navbar_menu {
+@media (max-width: 1127px) {
+
+    .topBar {
         display: none;
     }
 
+    .navbar {
+        justify-content: space-evenly;
+        padding: 0;
+    }
+
     .navbar img {
-        margin-right: 50px;
+        margin-right: 0;
+    }
+
+    .navbar_left {
+        margin-left: 20px;
+    }
+
+    .navbar_right {
+        margin-right: 20px;
     }
 
     .menu_icon i {
         display: block;
     }
 
+
+    .navbar_menu {
+        display: none;
+
+    }
 }
+
+/*Hamburger navbar - Lilii*/
+
+.overflowMenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+
+.overflowMenu:target {
+    display: block;
+}
+
+.overflowMenu_content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.overflowMenu_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overflowMenu_links a {
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.overflowMenu_links a:hover {
+    color: rgb(126, 126, 126);
+}
+
+.overflowMenu_close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    color: black;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+.icons-space {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 100px;
+    gap: 20px;
+}
+
+.icons-space .socialIcons_icon {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    margin: 15px;
+}
+
+
+
 
 /* Banner - Kevin */
 
@@ -1392,6 +1483,7 @@ main {
     .admin-content-left {
         margin-right: 30px;
     }
+
     .admin-buttons {
         flex-direction: column;
         align-items: center;
@@ -1408,6 +1500,7 @@ main {
     margin-bottom: 50px;
 
 }
+
 .praktika-img img {
     width: 100%;
     height: auto;
