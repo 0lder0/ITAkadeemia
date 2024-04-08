@@ -195,14 +195,6 @@ main {
         margin-right: 0;
     }
 
-    .navbar_left {
-        margin-left: 20px;
-    }
-
-    .navbar_right {
-        margin-right: 20px;
-    }
-
     .menu_icon i {
         display: block;
     }
@@ -351,6 +343,10 @@ main {
     transition: 0.3s ease-in-out;
 }
 
+#calendar {
+    margin-bottom: 80px;
+}
+
 .pageIntro_button {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
@@ -444,6 +440,7 @@ main {
     }
 
     .pageIntro_content {
+        width: 95%;
         padding: 3.125rem 0.75rem;
         left: 15px;
     }
