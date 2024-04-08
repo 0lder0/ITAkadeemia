@@ -440,11 +440,12 @@ main {
 
 @media (max-width: 768px) {
     .pageIntro {
-        height: 400px;
+        height: 450px;
     }
 
     .pageIntro_content {
-        left: 20px;
+        padding: 3.125rem 0.75rem;
+        left: 15px;
     }
 
     .pageIntro_title {
@@ -645,17 +646,13 @@ main {
 @media (max-width: 1000px) {
     .akadeemiaeosa1 {
         flex-direction: column;
-        /* Muudame flex-suuna veergudest ridadeks */
     }
 
     .akadeemiatekst,
     .akadeemialogo {
         width: 100%;
-        /* Mõlemad elemendid võtavad 100% laiusest */
         max-width: none;
-        /* Eemaldame maksimaalse laiuse piirangu */
         text-align: center;
-        /* Keskendame teksti ja logo */
         margin-bottom: 20px;
 
 
@@ -933,32 +930,48 @@ main {
     height: 50px;
     width: 100%;
     border: black 1px solid;
+    padding: 1rem;
     cursor: pointer;
+    position: relative;
 }
 
 .dropdown_arrow {
     display: flex;
-    justify-content: end;
-    padding: 1rem;
+    justify-content: flex-end;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
 }
 
 .dropdown_select {
     width: 100%;
-    margin-top: -15px;
-    position: relative;
 }
 
 .dropdown_choices {
     display: none;
     position: absolute;
+    top: 100%;
+    left: 0;
     height: 250px;
     overflow-y: auto;
+    margin-top: 1px;
     padding: 0;
     list-style-type: none;
     background-color: #f6f1f1;
     border: #8e899c 1px solid;
     width: 100%;
     z-index: 1;
+}
+
+.dropdown_text {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown_text {
+    display: flex;
 }
 
 .dropdown_choices.show {
