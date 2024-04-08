@@ -126,16 +126,16 @@
                     </div>
                     <div class="dropdown_select">
                         <ul class="dropdown_choices">
-                            <li class="dropdown_choice" role="presentation">ITA20 Tarkvaraarendaja</li>
-                            <li class="dropdown_choice" role="presentation">ITA21 Tarkvaraarendaja</li>
-                            <li class="dropdown_choice" role="presentation">ITA22 Tarkvaraarendaja</li>
-                            <li class="dropdown_choice" role="presentation">ITA23 Tarkvaraarendaja</li>
-                            <li class="dropdown_choice" role="presentation">ITA24 Tarkvaraarendaja</li>
-                            <li class="dropdown_choice" role="presentation">ITS20 IT-süsteemide spetsialist</li>
-                            <li class="dropdown_choice" role="presentation">ITS21 IT-süsteemide spetsialist</li>
-                            <li class="dropdown_choice" role="presentation">ITS22 IT-süsteemide spetsialist</li>
-                            <li class="dropdown_choice" role="presentation">ITS23 IT-süsteemide spetsialist</li>
-                            <li class="dropdown_choice" role="presentation">ITS24 IT-süsteemide spetsialist</li>
+                            <li class="dropdown_choice" role="presentation" id="1529">ITA20 Tarkvaraarendaja</li>
+                            <li class="dropdown_choice" role="presentation" id="1583">ITA21 Tarkvaraarendaja</li>
+                            <li class="dropdown_choice" role="presentation" id="1692">ITA22 Tarkvaraarendaja</li>
+                            <li class="dropdown_choice" role="presentation" id="1844">ITA23 Tarkvaraarendaja</li>
+                            <li class="dropdown_choice" role="presentation" id="1950">ITA24 Tarkvaraarendaja</li>
+                            <li class="dropdown_choice" role="presentation" id="1508">ITS20 IT-süsteemide spetsialist</li>
+                            <li class="dropdown_choice" role="presentation" id="1582">ITS21 IT-süsteemide spetsialist</li>
+                            <li class="dropdown_choice" role="presentation" id="1691">ITS22 IT-süsteemide spetsialist</li>
+                            <li class="dropdown_choice" role="presentation" id="1843">ITS23 IT-süsteemide spetsialist</li>
+                            <li class="dropdown_choice" role="presentation" id="1949">ITS24 IT-süsteemide spetsialist</li>
                             <li class="dropdown_choice" role="presentation">VS22 Noorem tarkvaraarendaja</li>
                             <li class="dropdown_choice" role="presentation">VS23 Noorem tarkvaraarendaja</li>
                             <li class="dropdown_choice" role="presentation">VS24 Noorem tarkvaraarendaja</li>
@@ -269,6 +269,7 @@
     let firstDayOfWeek = new Date(today);
     firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 5) % 7);
     let currentWeek = firstDayOfWeek.toISOString().split('T')[0];
+    let currentGroupID = 1583;
 
     function clearTimetable() {
         const lessonCells = document.querySelectorAll('.timetable td');
@@ -280,7 +281,7 @@
     }
 
     function fetchTimetableData(currentWeek) {
-        fetch(`https://siseveeb.voco.ee/veebilehe_andmed/tunniplaan?nadal=${currentWeek}T00:00:00&grupp=1583`)
+        fetch(`https://siseveeb.voco.ee/veebilehe_andmed/tunniplaan?nadal=${currentWeek}T00:00:00&grupp=${currentGroupID}`)
             .then(response => response.json())
             .then(data => {
                 let dayIndex = 1;
@@ -461,6 +462,8 @@
                 const selectedOption = this.textContent;
                 const dropdownText = document.querySelector('.dropdown_text');
                 dropdownText.textContent = selectedOption;
+                currentGroupID = choice.id;
+                fetchTimetableData(currentWeek);
             });
         });
     });
