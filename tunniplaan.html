@@ -452,6 +452,21 @@
     });
 
 
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdownChoices = document.querySelectorAll('.dropdown_choice');
+
+        dropdownChoices.forEach(choice => {
+            choice.addEventListener('click', function () {
+                const selectedOption = this.textContent;
+                const dropdownLabel = document.querySelector('.dropdown_label');
+                dropdownLabel.textContent = selectedOption; // Vahetage dropdowni pealkiri valitud valiku pealkirjaga
+            });
+        });
+    });
+
+
+
 </script>
 
 </html>
