@@ -28,7 +28,7 @@ if (!isset($_SESSION['loggedin'])) {
 <body id="admin-body">
 <div class="admin-navbar">
     <h1>Admin Dashboard</h1>
-    <a href="#">Logout</a>
+    <a href="?logout=true">Logout</a>
 </div>
 
 <div class="admin-container">
