@@ -1369,6 +1369,48 @@ main {
     flex-direction: column;
 }
 
+.admin-container-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.admin-container-login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(51, 119, 197, 0.2);
+    border-radius: 20px;
+    width: 400px;
+    height: 300px;
+}
+
+.admin-container-login label {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.admin-container-login input {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+#login-button {
+    background: rgb(0, 14, 95);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
 .admin-navbar {
     display: flex;
     flex-direction: row;
