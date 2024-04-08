@@ -120,7 +120,7 @@
             <div class="timetable_container">
                 <label class="dropdown_label">Vali tunniplaan:</label>
                 <div class="dropdown">
-
+                    <div class="dropdown_text">Vali õppegrupp</div>
                     <div class="dropdown_arrow">
                         <i class="fa fa-chevron-down"></i>
                     </div>
@@ -267,7 +267,7 @@
     const today = new Date();
     const dayOfWeek = today.getDay();
     let firstDayOfWeek = new Date(today);
-    firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 6) % 7);
+    firstDayOfWeek.setDate(today.getDate() - (dayOfWeek + 5) % 7);
     let currentWeek = firstDayOfWeek.toISOString().split('T')[0];
 
     function clearTimetable() {
@@ -459,8 +459,8 @@
         dropdownChoices.forEach(choice => {
             choice.addEventListener('click', function () {
                 const selectedOption = this.textContent;
-                const dropdownLabel = document.querySelector('.dropdown_label');
-                dropdownLabel.textContent = selectedOption; // Vahetage dropdowni pealkiri valitud valiku pealkirjaga
+                const dropdownText = document.querySelector('.dropdown_text');
+                dropdownText.textContent = selectedOption;
             });
         });
     });
