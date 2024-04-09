@@ -286,7 +286,7 @@ main {
     background-attachment: fixed;
     background-repeat: no-repeat;
     display: flex;
-    height: 85vh;
+    height: 51rem;
     justify-content: space-between;
 }
 

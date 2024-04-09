@@ -661,6 +661,10 @@ button.icon-button > span.chevron-arrow-right {
 
 /* sm */
 @media screen and (max-width: 768px) {
+    .calendar {
+        margin-left: auto;
+        margin-right: auto;
+    }
     .calendar-sidebar {
         width: 180px;
     }
